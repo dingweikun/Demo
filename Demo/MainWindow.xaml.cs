@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,28 @@ namespace Demo
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //frame.Source = new Uri("pack://application:,,,/Demo;component/Page2.xaml");
+            frame.Navigate(new Uri("pack://application:,,,/Demo;component/Page2.xaml"));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //frame.Source = null;
+            frame.Navigate(null);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Main @");
         }
     }
 }
