@@ -61,6 +61,24 @@ namespace Demo.Languages {
         }
         
         /// <summary>
+        ///   查找类似 Help 的本地化字符串。
+        /// </summary>
+        internal static string String_MainWindowHelpCommand {
+            get {
+                return ResourceManager.GetString("String_MainWindowHelpCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Settings 的本地化字符串。
+        /// </summary>
+        internal static string String_MainWindowSettingsCommand {
+            get {
+                return ResourceManager.GetString("String_MainWindowSettingsCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Demo 的本地化字符串。
         /// </summary>
         internal static string String_MainWindowTitle {

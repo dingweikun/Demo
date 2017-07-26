@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="String_MainWindowHelpCommand" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="String_MainWindowSettingsCommand" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>Demo</value>
   </data>

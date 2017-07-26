@@ -1,11 +1,9 @@
-﻿using MahApps.Metro;
+﻿using Demo.Properties;
+using MahApps.Metro;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows;
+using WPFLocalizeExtension.Engine;
 
 namespace Demo
 {
@@ -27,7 +25,11 @@ namespace Demo
             set => ThemeManager.ChangeAppStyle(Current, CurrentAccent, value);
         }
 
-
+        public CultureInfo CurrentCulture
+        {
+            get => LocalizeDictionary.Instance.Culture;
+            set => LocalizeDictionary.Instance.Culture = value;
+        }
 
 
 
@@ -36,30 +38,34 @@ namespace Demo
         {
             base.OnStartup(e);
 
-            // 配置程序
-
-
+            LoadApplicationSettings();
         }
 
 
-        /// <summary>
-        /// 设置程序主题和颜色
-        /// </summary>
-        public void SetAppliactionApperance(AppTheme theme, Accent accent)
+        protected override void OnExit(ExitEventArgs e)
         {
-            ThemeManager.ChangeAppStyle(Current, accent, theme);
+            UpdateApplicationSettings();
+
+            base.OnExit(e);
         }
 
+        public void LoadApplicationSettings()
+        {
+            Settings.Default.Reload();
+            CurrentAccent = ThemeManager.GetAccent(Settings.Default.Accent);
+            CurrentTheme = ThemeManager.GetAppTheme(Settings.Default.Theme);
+            CurrentCulture = new CultureInfo(Settings.Default.Culture);
+        }
 
-
-        /// <summary>
-        /// 设置程序语言
-        /// </summary>
-        protected void SetAppliactionLanguage()
+        public void UpdateApplicationSettings()
         {
 
+            Settings.Default.Accent = CurrentAccent.Name;
+            Settings.Default.Theme = CurrentTheme.Name;
+            Settings.Default.Culture = CurrentCulture.Name;
+            Settings.Default.Save();
+            
         }
-
 
     }
 }

@@ -29,13 +29,19 @@ namespace Demo
             InitializeComponent();
         }
 
-        private void Click_Language(object sender, RoutedEventArgs e)
+        private void Click_CN(object sender, RoutedEventArgs e)
         {
             LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo("zh-CN");
         }
 
+        private void Click_US(object sender, RoutedEventArgs e)
+        {
+            LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo("en-US");
+        }
+
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
+            tab.SelectedIndex = 1;
 
         }
 
