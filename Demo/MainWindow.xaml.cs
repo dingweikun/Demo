@@ -1,6 +1,8 @@
-﻿using MahApps.Metro.Controls;
+﻿using MahApps.Metro;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFLocalizeExtension.Engine;
 
 namespace Demo
 {
@@ -26,21 +29,24 @@ namespace Demo
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Click_Language(object sender, RoutedEventArgs e)
         {
-            //frame.Source = new Uri("pack://application:,,,/Demo;component/Page2.xaml");
-            frame.Navigate(new Uri("pack://application:,,,/Demo;component/Page2.xaml"));
+            LocalizeDictionary.Instance.Culture = CultureInfo.GetCultureInfo("zh-CN");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
-            //frame.Source = null;
-            frame.Navigate(null);
+
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_Help(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Main @");
+
+        }
+
+        private void Click_Theme(object sender, RoutedEventArgs e)
+        {
+            (Application.Current as App).CurrentAccent = ThemeManager.GetAccent("Red");
         }
     }
 }

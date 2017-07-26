@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo
+namespace WpfApp1
 {
     /// <summary>
-    /// Page1.xaml 的交互逻辑
+    /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class Page2 : Page
+    public partial class MainWindow : Window
     {
-        public Page2()
+        public MainWindow()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("EEEE");
-            this.Visibility = Visibility.Collapsed;
-        }
     }
 }
-
-

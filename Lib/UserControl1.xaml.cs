@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo
+namespace Lib
 {
     /// <summary>
-    /// Page1.xaml 的交互逻辑
+    /// UserControl1.xaml 的交互逻辑
     /// </summary>
-    public partial class Page1 : Page
+    public partial class UserControl1 : UserControl
     {
-        public Page1()
+        public UserControl1()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("SFE");
         }
     }
 }

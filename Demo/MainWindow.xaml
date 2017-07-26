@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:local="clr-namespace:Demo"
-        mc:Ignorable="d"    
-        Title="设计仿真系统框架原型" Height="350" Width="525">
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+        mc:Ignorable="d"        
+        Height="700" Width="1000" WindowStartupLocation="CenterScreen"
+        NonActiveWindowTitleBrush="{Binding RelativeSource={RelativeSource Self}, Path=WindowTitleBrush}"                     
+        Title="{lex:Loc String_MainWindowTitle}">
 
 
     <mahapps:MetroWindow.Resources>
@@ -22,18 +27,19 @@
             19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z
         </PathGeometry>
         <PathGeometry x:Key="HelpIconPathDataKey">
-            M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 
-            19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z
+            M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 
+            14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 
+            15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z
         </PathGeometry>
     </mahapps:MetroWindow.Resources>
 
     <mahapps:MetroWindow.WindowButtonCommands>
-        <mahapps:WindowButtonCommands Template="{DynamicResource MahApps.Metro.Templates.WindowButtonCommands.Win10}" />
+        <mahapps:WindowButtonCommands Template="{DynamicResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
     </mahapps:MetroWindow.WindowButtonCommands>
-    
+
     <mahapps:MetroWindow.RightWindowCommands>
         <mahapps:WindowCommands ShowLastSeparator="False">
-            <Button Click="Button_Click_1">
+            <Button Click="Button_Click_Settings">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"        
                           Data="{StaticResource SettingsIconPathDataKey}" 
@@ -42,8 +48,7 @@
                                Text="设置"/>
                 </StackPanel>
             </Button>
-            
-            <Button Click="Button_Click">
+            <Button Click="Button_Click_Help">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"        
                           Data="{StaticResource HelpIconPathDataKey}" 
@@ -52,22 +57,14 @@
                                Text="帮助"/>
                 </StackPanel>
             </Button>
-
         </mahapps:WindowCommands>
     </mahapps:MetroWindow.RightWindowCommands>
 
 
-
-
-
-
-
-
-    <Grid Background="LightCoral">
-        <Button Height="49" Click="Button_Click_2">main window</Button>
-        
-    <Frame x:Name="frame" NavigationUIVisibility="Hidden" Source="Page1.xaml">
-
-    </Frame>
+    <Grid>
+        <DockPanel>
+            <Button VerticalAlignment="Bottom" Click="Click_Language">Language</Button>
+            <Button VerticalAlignment="Bottom" Click="Click_Theme">Theme</Button>
+        </DockPanel>
     </Grid>
 </mahapps:MetroWindow>
