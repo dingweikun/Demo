@@ -9,11 +9,26 @@
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
 
         <!-- Modified MahApps.Metro fonts resource dictionaries.-->
-        <ResourceDictionary Source="pack://application:,,,/DingWK.MahApps;component/Styles/FontsDebug.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DingWK.MahApps;component/Styles/Fonts.xaml" />
+        <!--<ResourceDictionary Source="pack://application:,,,/DingWK.MahApps;component/Styles/FontsDebug.xaml" />-->
         
         
         
     </ResourceDictionary.MergedDictionaries>
-   
 
+
+    <Style x:Key="TitleLevel1"
+           BasedOn="{StaticResource MetroTextBlock}"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Opacity" Value="0.6" />
+    </Style>
+
+    <Style x:Key="TitleLevel2"
+           BasedOn="{StaticResource MetroTextBlock}"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Opacity" Value="0.6" />
+    </Style>
+    
 </ResourceDictionary>

@@ -3,16 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:Demo.Views"
         xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
         lex:LocalizeDictionary.DesignCulture="en"
         lex:ResxLocalizationProvider.DefaultAssembly="Demo"
         lex:ResxLocalizationProvider.DefaultDictionary="Strings"
-        mc:Ignorable="d"        
-        Height="700" Width="1000" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" 
+        Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen"
         NonActiveWindowTitleBrush="{Binding RelativeSource={RelativeSource Self}, Path=WindowTitleBrush}"                     
+        BorderBrush="{Binding RelativeSource={RelativeSource Self}, Path=WindowTitleBrush}"
         Title="{lex:Loc String_MainWindowTitle}"
+        DataContext="{Binding Main, Source={StaticResource ViewModelLocator}}"                     
+        IconOverlayBehavior="Never"
+        LeftWindowCommandsOverlayBehavior="Never"
+        RightWindowCommandsOverlayBehavior="Never"
+        WindowButtonCommandsOverlayBehavior="Never"
+        TitleCharacterCasing="Normal"
         >
+    
     <mahapps:MetroWindow.Resources>
         <PathGeometry x:Key="SettingsIconPathDataKey">
             M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 
@@ -31,72 +41,92 @@
             15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z
         </PathGeometry>
 
-        <DataTemplate x:Key="Header">
-            <!--<Border BorderBrush="{x:Null}" BorderThickness="0" Visibility="Collapsed"/>-->
-        </DataTemplate>
-        
-        
+        <view:SettingsView x:Key="SettingsView"/>
+
     </mahapps:MetroWindow.Resources>
 
+    <!-- Window System Buttons -->
     <mahapps:MetroWindow.WindowButtonCommands>
-        <mahapps:WindowButtonCommands Template="{DynamicResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
+        <mahapps:WindowButtonCommands Template="{StaticResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
     </mahapps:MetroWindow.WindowButtonCommands>
 
+    <!-- Title Command Buttons -->
     <mahapps:MetroWindow.RightWindowCommands>
         <mahapps:WindowCommands ShowLastSeparator="False">
-            <Button Click="Button_Click_Settings">
+            <ToggleButton x:Name="MainWindowSettingsButton">
                 <StackPanel Orientation="Horizontal">
-                    <Path Width="14" Height="14" Stretch="Uniform"        
+                    <Path Width="14" Height="14" Stretch="Uniform"
                           Data="{StaticResource SettingsIconPathDataKey}" 
-                          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"/>
+                          Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center"
-                               Text="{lex:Loc String_MainWindowSettingsCommand}"/>
+                               Text="{lex:Loc String_MainWindowSettings}"/>
                 </StackPanel>
-            </Button>
+            </ToggleButton>
             <Button Click="Button_Click_Help">
                 <StackPanel Orientation="Horizontal">
-                    <Path Width="14" Height="14" Stretch="Uniform"        
+                    <Path Width="14" Height="14" Stretch="Uniform"
                           Data="{StaticResource HelpIconPathDataKey}" 
-                          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"/>
+                          Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center"
-                               Text="{lex:Loc String_MainWindowHelpCommand}"/>
+                               Text="{lex:Loc String_MainWindowHelp}"/>
                 </StackPanel>
             </Button>
         </mahapps:WindowCommands>
     </mahapps:MetroWindow.RightWindowCommands>
 
+    <!-- Flyouts -->
+    <mahapps:MetroWindow.Flyouts>
+        <mahapps:FlyoutsControl>
+            <mahapps:Flyout x:Name="SettingsFlyout" Header="{lex:Loc String_MainWindowSettings}" Theme="Adapt" 
+                            Position="Right" HorizontalContentAlignment="Stretch" AreAnimationsEnabled="True"
+                            CloseButtonIsCancel="True"
+                            IsOpen="{Binding ElementName=MainWindowSettingsButton, Path=IsChecked}"
+                            Content="{StaticResource SettingsView}"
+                            FontFamily="{StaticResource HeaderFontFamily}"/>
+        </mahapps:FlyoutsControl>
 
-    <Grid >
-        <Grid.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Grid.Resources>
+    </mahapps:MetroWindow.Flyouts>
+
+
+
+
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TabControl x:Name="tab">
+        <TabControl x:Name="MainRootTabControl">
+            <TabControl.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </TabControl.Resources>
+
             <TabControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="TabItem.Visibility" Value="Collapsed"/>
                 </Style>
             </TabControl.ItemContainerStyle>
-             <TabItem >
+
+            <TabItem >
                 <Grid Background="#FFE5E5E5">
                     <TextBlock>开始</TextBlock>
                 </Grid>
             </TabItem>
-            
+
             <TabItem >
                 <Grid >
-                    <TextBlock>设置 </TextBlock>
+                    <TextBlock>设置</TextBlock>
                 </Grid>
             </TabItem>
         </TabControl>
+
+
+
 
         <DockPanel Grid.Row="1">
             <Button VerticalAlignment="Bottom" Click="Click_CN">CN</Button>

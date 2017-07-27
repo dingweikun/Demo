@@ -63,18 +63,18 @@ namespace Demo.Languages {
         /// <summary>
         ///   查找类似 Help 的本地化字符串。
         /// </summary>
-        internal static string String_MainWindowHelpCommand {
+        internal static string String_MainWindowHelp {
             get {
-                return ResourceManager.GetString("String_MainWindowHelpCommand", resourceCulture);
+                return ResourceManager.GetString("String_MainWindowHelp", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Settings 的本地化字符串。
         /// </summary>
-        internal static string String_MainWindowSettingsCommand {
+        internal static string String_MainWindowSettings {
             get {
-                return ResourceManager.GetString("String_MainWindowSettingsCommand", resourceCulture);
+                return ResourceManager.GetString("String_MainWindowSettings", resourceCulture);
             }
         }
         
@@ -84,6 +84,51 @@ namespace Demo.Languages {
         internal static string String_MainWindowTitle {
             get {
                 return ResourceManager.GetString("String_MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Accent Color 的本地化字符串。
+        /// </summary>
+        internal static string String_SettingsAccent {
+            get {
+                return ResourceManager.GetString("String_SettingsAccent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Appearence 的本地化字符串。
+        /// </summary>
+        internal static string String_SettingsAppearence {
+            get {
+                return ResourceManager.GetString("String_SettingsAppearence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Language 的本地化字符串。
+        /// </summary>
+        internal static string String_SettingsLanguage {
+            get {
+                return ResourceManager.GetString("String_SettingsLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Project Modules 的本地化字符串。
+        /// </summary>
+        internal static string String_SettingsProjectModules {
+            get {
+                return ResourceManager.GetString("String_SettingsProjectModules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Theme 的本地化字符串。
+        /// </summary>
+        internal static string String_SettingsTheme {
+            get {
+                return ResourceManager.GetString("String_SettingsTheme", resourceCulture);
             }
         }
     }

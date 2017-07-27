@@ -32,8 +32,6 @@ namespace Demo
         }
 
 
-
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

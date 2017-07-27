@@ -41,7 +41,7 @@ namespace Demo
 
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
-            tab.SelectedIndex = 1;
+            MainRootTabControl.SelectedIndex = 1;
 
         }
 
