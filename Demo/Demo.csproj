@@ -80,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\AccentToBrushConverter.cs" />
+    <Compile Include="Model\ThemeInfo.cs" />
+    <Compile Include="Model\LanguageInfo.cs" />
+    <Compile Include="ViewModel\AppearenceViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\AppearenceView.xaml.cs">

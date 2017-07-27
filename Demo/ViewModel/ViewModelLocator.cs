@@ -43,16 +43,13 @@ namespace Demo.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<AppearenceViewModel>();
         }
 
-        public MainViewModel Main
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
-        
+        public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+ 
+        public AppearenceViewModel Appearence => ServiceLocator.Current.GetInstance<AppearenceViewModel>();
+ 
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

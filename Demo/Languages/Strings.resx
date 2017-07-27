@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="String_DarkTheme" xml:space="preserve">
+    <value>DarkTheme</value>
+  </data>
+  <data name="String_LightTheme" xml:space="preserve">
+    <value>Light Theme</value>
+  </data>
   <data name="String_MainWindowHelp" xml:space="preserve">
     <value>Help</value>
   </data>

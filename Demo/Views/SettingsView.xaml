@@ -14,7 +14,9 @@
              >
     <UserControl.Resources>
         <ResourceDictionary>
-            <view:AppearenceView x:Key="AppearencePage"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -41,11 +43,11 @@
         <TabControl x:Name="SettingsTabControl" Grid.Column="2" Margin="20,0"
                     SelectedIndex="{Binding ElementName=SettingsList,Path=SelectedIndex}">
             <TabControl.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
+                <Style x:Key="TabContentScrollViewStyle" TargetType="{x:Type ScrollViewer}">
+                    <Setter Property="Margin" Value="20,0,0,0"/>
+                    <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                    <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+                </Style>
             </TabControl.Resources>
 
             <TabControl.ItemContainerStyle>
@@ -54,15 +56,19 @@
                 </Style>
             </TabControl.ItemContainerStyle>
 
-            <TabItem >
+            <TabItem>
                 <Grid Background="#FFE5E5E5">
                     <TextBlock>开始</TextBlock>
                 </Grid>
             </TabItem>
 
-            <TabItem Content="{StaticResource AppearencePage}"/>
+            <TabItem>
+                <ScrollViewer Style="{StaticResource TabContentScrollViewStyle}">
+                    <view:AppearenceView/>
+                </ScrollViewer>
+            </TabItem>
 
         </TabControl>
-        
+
     </Grid>
 </UserControl>

@@ -61,6 +61,24 @@ namespace Demo.Languages {
         }
         
         /// <summary>
+        ///   查找类似 DarkTheme 的本地化字符串。
+        /// </summary>
+        internal static string String_DarkTheme {
+            get {
+                return ResourceManager.GetString("String_DarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Light Theme 的本地化字符串。
+        /// </summary>
+        internal static string String_LightTheme {
+            get {
+                return ResourceManager.GetString("String_LightTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Help 的本地化字符串。
         /// </summary>
         internal static string String_MainWindowHelp {
