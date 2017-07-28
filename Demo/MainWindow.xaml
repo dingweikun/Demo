@@ -10,10 +10,10 @@
         lex:ResxLocalizationProvider.DefaultAssembly="Demo"
         lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         mc:Ignorable="d" 
-        Height="700" Width="1000"
         WindowStartupLocation="CenterScreen"
-        NonActiveWindowTitleBrush="{Binding RelativeSource={RelativeSource Self}, Path=WindowTitleBrush}"                     
-        BorderBrush="{Binding RelativeSource={RelativeSource Self}, Path=WindowTitleBrush}"
+        WindowTitleBrush="{DynamicResource AccentBaseColorBrush}"
+        BorderBrush="{DynamicResource AccentBaseColorBrush}"
+        GlowBrush="{DynamicResource AccentColorBrush}"
         Title="{lex:Loc String_MainWindowTitle}"
         DataContext="{Binding Main, Source={StaticResource ViewModelLocator}}"                     
         IconOverlayBehavior="Never"
@@ -21,8 +21,9 @@
         RightWindowCommandsOverlayBehavior="Never"
         WindowButtonCommandsOverlayBehavior="Never"
         TitleCharacterCasing="Normal"
-        >
-    
+        MinHeight="600" MinWidth="800"
+        x:Name="AppMainWindow">
+
     <mahapps:MetroWindow.Resources>
         <PathGeometry x:Key="SettingsIconPathDataKey">
             M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 
@@ -50,7 +51,7 @@
     <!-- Title Command Buttons -->
     <mahapps:MetroWindow.RightWindowCommands>
         <mahapps:WindowCommands ShowLastSeparator="False">
-            <ToggleButton x:Name="MainWindowSettingsButton">
+            <ToggleButton x:Name="MainWindowSettingsButton" Focusable="False">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"
                           Data="{StaticResource SettingsIconPathDataKey}" 
@@ -59,7 +60,9 @@
                                Text="{lex:Loc String_MainWindowSettings}"/>
                 </StackPanel>
             </ToggleButton>
-            <Button Click="Button_Click_Help">
+            <Button Focusable="False"
+                    Command="{Binding MainWindowHelpCommand}" 
+                    CommandParameter="{Binding ElementName=RootTabControl, Path=SelectedIndex}">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"
                           Data="{StaticResource HelpIconPathDataKey}" 
@@ -85,51 +88,30 @@
 
     </mahapps:MetroWindow.Flyouts>
 
+    <!-- Contents -->
+    <TabControl x:Name="RootTabControl" SelectedIndex="{Binding TabIndex}">
+        <TabControl.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </TabControl.Resources>
 
+        <TabControl.ItemContainerStyle>
+            <Style>
+                <Setter Property="TabItem.Visibility" Value="Collapsed"/>
+            </Style>
+        </TabControl.ItemContainerStyle>
 
+        <TabItem x:Name="StartPageTab">
+            <view:StartView Tag="{Binding ElementName=AppMainWindow}"/>
+        </TabItem>
 
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-
-        <TabControl x:Name="MainRootTabControl">
-            <TabControl.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-            </TabControl.Resources>
-
-            <TabControl.ItemContainerStyle>
-                <Style>
-                    <Setter Property="TabItem.Visibility" Value="Collapsed"/>
-                </Style>
-            </TabControl.ItemContainerStyle>
-
-            <TabItem >
-                <Grid Background="#FFE5E5E5">
-                    <TextBlock>开始</TextBlock>
-                </Grid>
-            </TabItem>
-
-            <TabItem >
-                <Grid >
-                    <TextBlock>设置</TextBlock>
-                </Grid>
-            </TabItem>
-        </TabControl>
-
-
-
-
-        <DockPanel Grid.Row="1">
-            <Button VerticalAlignment="Bottom" Click="Click_CN">CN</Button>
-            <Button VerticalAlignment="Bottom" Click="Click_Theme">Theme</Button>
-            <Button VerticalAlignment="Bottom" Click="Click_US">US</Button>
-        </DockPanel>
-    </Grid>
+        <TabItem x:Name="WorkspaceTab" >
+            <Grid >
+                <TextBlock>设置</TextBlock>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </mahapps:MetroWindow>

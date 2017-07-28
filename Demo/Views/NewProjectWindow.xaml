@@ -1,0 +1,24 @@
+﻿<mahapps:MetroWindow x:Class="Demo.Views.NewProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:Demo.Views"
+        xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        Height="500" Width="800"
+        mc:Ignorable="d" 
+        WindowStartupLocation="CenterOwner"
+        DataContext="{Binding NewProject, Source={StaticResource ViewModelLocator}}"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+        Title="{lex:Loc String_NewProjectWindowTitle}"
+        Style="{StaticResource ModualMetroWindowStyle}">
+    
+    <!-- Window System Buttons -->
+    <mahapps:MetroWindow.WindowButtonCommands>
+        <mahapps:WindowButtonCommands Template="{StaticResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
+    </mahapps:MetroWindow.WindowButtonCommands>
+    
+</mahapps:MetroWindow>

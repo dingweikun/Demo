@@ -1,8 +1,5 @@
-﻿using MahApps.Metro;
-using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFLocalizeExtension.Engine;
 
-namespace Demo
+namespace Demo.Views
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// StartView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class StartView : UserControl
     {
-        public MainWindow()
+        public StartView()
         {
             InitializeComponent();
         }

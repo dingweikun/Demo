@@ -57,9 +57,9 @@
             </TabControl.ItemContainerStyle>
 
             <TabItem>
-                <Grid Background="#FFE5E5E5">
-                    <TextBlock>开始</TextBlock>
-                </Grid>
+                <ScrollViewer Style="{StaticResource TabContentScrollViewStyle}">
+                    <view:AppearenceView/>
+                </ScrollViewer>
             </TabItem>
 
             <TabItem>

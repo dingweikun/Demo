@@ -106,6 +106,33 @@ namespace Demo.Languages {
         }
         
         /// <summary>
+        ///   查找类似 New Project 的本地化字符串。
+        /// </summary>
+        internal static string String_NewProject {
+            get {
+                return ResourceManager.GetString("String_NewProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Create New Project 的本地化字符串。
+        /// </summary>
+        internal static string String_NewProjectWindowTitle {
+            get {
+                return ResourceManager.GetString("String_NewProjectWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Open Project 的本地化字符串。
+        /// </summary>
+        internal static string String_OpenProject {
+            get {
+                return ResourceManager.GetString("String_OpenProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Accent Color 的本地化字符串。
         /// </summary>
         internal static string String_SettingsAccent {
@@ -147,6 +174,15 @@ namespace Demo.Languages {
         internal static string String_SettingsTheme {
             get {
                 return ResourceManager.GetString("String_SettingsTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Start 的本地化字符串。
+        /// </summary>
+        internal static string String_Start {
+            get {
+                return ResourceManager.GetString("String_Start", resourceCulture);
             }
         }
     }

@@ -132,6 +132,15 @@
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>Demo</value>
   </data>
+  <data name="String_NewProject" xml:space="preserve">
+    <value>New Project</value>
+  </data>
+  <data name="String_NewProjectWindowTitle" xml:space="preserve">
+    <value>Create New Project</value>
+  </data>
+  <data name="String_OpenProject" xml:space="preserve">
+    <value>Open Project</value>
+  </data>
   <data name="String_SettingsAccent" xml:space="preserve">
     <value>Accent Color</value>
   </data>
@@ -146,5 +155,8 @@
   </data>
   <data name="String_SettingsTheme" xml:space="preserve">
     <value>Theme</value>
+  </data>
+  <data name="String_Start" xml:space="preserve">
+    <value>Start</value>
   </data>
 </root>

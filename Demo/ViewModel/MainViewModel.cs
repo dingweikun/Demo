@@ -18,6 +18,22 @@ namespace Demo.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        private bool isWorkapeceActive;
+        public bool IsWorkspaceActive
+        {
+            get => isWorkapeceActive;
+            set
+            {
+                if (isWorkapeceActive != value)
+                {
+                    isWorkapeceActive = value;
+                    RaisePropertyChanged(nameof(IsWorkspaceActive));
+                }
+            }
+        }
+
+
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -42,9 +58,21 @@ namespace Demo.ViewModel
         //    set;
         //}
 
+        private int tabIndex;
+        public int TabIndex
+        {
+            get => tabIndex;
+            set
+            {
+                if (tabIndex != value)
+                {
+                    tabIndex = value % 2;
+                    RaisePropertyChanged(nameof(TabIndex));
+                }
+            }
+        }
 
-        //public RelayCommand AppHelpCommand => new RelayCommand(() => IsSettingViewOpen = true);
-
+        public RelayCommand<int> MainWindowHelpCommand => new RelayCommand<int>(x => TabIndex = x + 1);
 
     }
 }
