@@ -41,18 +41,19 @@ namespace Demo.ViewModel
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
-
+            
+            SimpleIoc.Default.Register<AppearenceViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<NewProjectViewModel>();
+            SimpleIoc.Default.Register<StartViewModel>();
         }
 
-        public MainViewModel Main
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
-        
+        public AppearenceViewModel Appearence => ServiceLocator.Current.GetInstance<AppearenceViewModel>();
+        public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+        public NewProjectViewModel NewProject => ServiceLocator.Current.GetInstance<NewProjectViewModel>();
+        public StartViewModel Start => ServiceLocator.Current.GetInstance<StartViewModel>();
+
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
