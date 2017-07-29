@@ -1,0 +1,97 @@
+﻿<mahapps:MetroWindow x:Class="Demo.View.AboutWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="clr-namespace:Demo.Model"
+    xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+    mc:Ignorable="d"
+    Style="{StaticResource FixedMetroWindowStyle}" 
+    Title="{lex:Loc String_About}" 
+    Height="540" Width="600"
+    WindowStartupLocation="CenterScreen">
+
+    <mahapps:MetroWindow.Resources>
+        <Style TargetType="Image" >
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+            <Setter Property="Margin" Value="30,0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="DockPanel.Dock" Value="Left"/>
+        </Style>
+    </mahapps:MetroWindow.Resources>
+
+    <mahapps:MetroWindow.WindowButtonCommands>
+        <mahapps:WindowButtonCommands Template="{StaticResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
+    </mahapps:MetroWindow.WindowButtonCommands>
+
+    <DockPanel Margin="40,20">
+        <TextBlock Text="{lex:Loc String_MainWindowTitle}"
+                   Style="{StaticResource HeadTextLevel1}"
+                   DockPanel.Dock="Top"/>
+
+        <TextBlock Text="{lex:Loc String_Packages}"
+                   Style="{StaticResource HeadTextLevel3}"
+                   Margin="0,30,0,10"
+                   DockPanel.Dock="Top"/>
+
+        <ScrollViewer>
+            <StackPanel Margin="5" >
+                <DockPanel Margin="0,0,0,30">
+                    <Image Source="/Icons/mahapps.png" />
+                    <TextBlock Text="MahApps.Metro" 
+                               DockPanel.Dock="Top" FontSize="24"/>
+                    <TextBlock Text="1.5.0" 
+                               DockPanel.Dock="Top" FontSize="18"/>
+                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
+                        <Hyperlink NavigateUri="http://mahapps.com" >
+                            http://mahapps.com
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" >
+                        <Hyperlink NavigateUri="https://github.com/MahApps/MahApps.Metro">
+                            https://github.com/MahApps/MahApps.Metro
+                        </Hyperlink>
+                    </TextBlock>
+
+                </DockPanel>
+
+                <DockPanel Margin="0,0,0,30">
+                    <Image Source="/Icons/mvvmlight.png" />
+                    <TextBlock Text="MVVM Light" 
+                               DockPanel.Dock="Top" FontSize="24"/>
+                    <TextBlock Text="5.3.0" 
+                               DockPanel.Dock="Top" FontSize="18"/>
+                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
+                        <Hyperlink NavigateUri="http://www.mvvmlight.net/">
+                            http://www.mvvmlight.net/
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" >
+                        <Hyperlink NavigateUri="http://mvvmlight.codeplex.com/">
+                            http://mvvmlight.codeplex.com/
+                        </Hyperlink>
+                    </TextBlock>
+                </DockPanel>
+
+                <DockPanel Margin="0,0,0,30">
+                    <Image Source="/Icons/nuget.png" />
+                    <TextBlock Text="WPF Localization Extension" 
+                               DockPanel.Dock="Top" FontSize="24"/>
+                    <TextBlock Text="2.3.2" 
+                               DockPanel.Dock="Top" FontSize="18"/>
+                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
+                        <Hyperlink NavigateUri="https://github.com/SeriousM/WPFLocalizationExtension">
+                            https://github.com/SeriousM/WPFLocalizationExtension
+                        </Hyperlink>
+                    </TextBlock>
+                </DockPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</mahapps:MetroWindow>

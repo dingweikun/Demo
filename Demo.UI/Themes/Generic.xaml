@@ -1,0 +1,74 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <!-- PART 1. MahApps Origin Resource Dictionaries -->
+
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+        <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />-->
+
+
+        <!-- PART 2. Customized Resource Dictionaries -->
+        
+        <ResourceDictionary Source="pack://application:,,,/Demo.UI;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Demo.UI;component/Styles/Windows.xaml" />
+ 
+    </ResourceDictionary.MergedDictionaries>
+
+
+    
+
+    
+    <Style x:Key="HeadTextLevel1" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MetroTextBlock}">
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}"/>
+        <Setter Property="FontWeight" Value="Heavy"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="Foreground"  Value="{DynamicResource TextBrush}"/>
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+
+    <Style x:Key="HeadTextLevel2" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MetroTextBlock}">
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}"/>
+        <Setter Property="FontWeight" Value="Heavy"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="Foreground"  Value="{DynamicResource TextBrush}"/>
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <Style x:Key="HeadTextLevel3" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MetroTextBlock}">
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}"/>
+        <Setter Property="FontWeight" Value="Heavy"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground"  Value="{DynamicResource TextBrush}"/>
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <!-- Window style  --><!--
+    <Style x:Key="ModualMetroWindowStyle" TargetType="{x:Type mahapps:MetroWindow}">
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}"/>
+        <Setter Property="GlowBrush" Value="{DynamicResource AccentColorBrush}"/>
+        <Setter Property="NonActiveWindowTitleBrush" Value="{x:Null}"/>
+        <Setter Property="WindowTitleBrush" Value="{x:Null}"/>
+        <Setter Property="OverrideDefaultWindowCommandsBrush" Value="{DynamicResource TextBrush}"/>
+        <Setter Property="ShowMinButton" Value="False"/>
+        <Setter Property="ShowMaxRestoreButton" Value="False"/>
+        <Setter Property="ShowInTaskbar" Value="False"/>
+        <Setter Property="TitleAlignment" Value="Center"/>
+        <Setter Property="TitleCharacterCasing" Value="Normal"/>
+        <Setter Property="TitleForeground" Value="{DynamicResource TextBrush}"/>
+        <Setter Property="Topmost" Value="True"/>
+    </Style>
+
+    
+    
+    
+    
+    -->
+
+
+</ResourceDictionary>

@@ -1,4 +1,7 @@
+using Demo.View;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using System.Windows;
 
 namespace Demo.ViewModel
 {
@@ -14,12 +17,12 @@ namespace Demo.ViewModel
     /// See http://www.galasoft.ch/mvvm
     /// </para>
     /// </summary>
-    public class MainViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase
     {
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel()
+        public MainWindowViewModel()
         {
             ////if (IsInDesignMode)
             ////{
@@ -30,5 +33,12 @@ namespace Demo.ViewModel
             ////    // Code runs "for real"
             ////}
         }
+
+
+        public RelayCommand<Window> HelpButtonCommand => new RelayCommand<Window>
+            ((o) => (new AboutWindow() { Owner = o }).ShowDialog());
+
+
+
     }
 }

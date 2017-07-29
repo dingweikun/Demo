@@ -4,12 +4,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Demo.ViewModel"
-             xmlns:local="clr-namespace:Demo"
              mc:Ignorable="d"
-             StartupUri="MainWindow.xaml">
+             ShutdownMode="OnMainWindowClose"
+             StartupUri="View/MainWindow.xaml"
+             >
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"  />
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceDictionary Source="pack://application:,,,/Demo.UI;component/Themes/Generic.xaml" />
+                
+                <!-- 必须直接引用一次 Mahapp 的 Accent 和 AppTheme，否则程序中 ThemeManager 不能正常工作 -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+
+            <vm:ViewModelLocator x:Key="ViewModelLocator" d:IsDataSource="True"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

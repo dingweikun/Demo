@@ -17,6 +17,14 @@ namespace Demo
         {
             MessageBox.Show($"App argu num: {e.Args.Count()}");
             base.OnStartup(e);
+
+            Exit += App_Exit;
+
+        }
+
+        private void App_Exit(object sender, ExitEventArgs e)
+        {
+            MessageBox.Show("App Shut Down !");
         }
     }
 }
