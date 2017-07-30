@@ -43,11 +43,13 @@ namespace Demo.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
+            SimpleIoc.Default.Register<StartViewViewModel>();
         }
 
         public MainWindowViewModel MainWindow => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
- 
-        
+        public StartViewViewModel StartView => ServiceLocator.Current.GetInstance<StartViewViewModel>();
+
+
 
         public static void Cleanup()
         {

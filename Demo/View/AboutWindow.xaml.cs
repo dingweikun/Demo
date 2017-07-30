@@ -1,4 +1,6 @@
 ﻿using MahApps.Metro.Controls;
+using System.Windows;
+using System.Windows.Documents;
 
 namespace Demo.View
 {
@@ -10,6 +12,15 @@ namespace Demo.View
         public AboutWindow()
         {
             InitializeComponent();
+            Hyperlink link = new Hyperlink();
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            if(sender is Hyperlink link)
+            {
+                System.Diagnostics.Process.Start(link.NavigateUri.ToString());
+            }
         }
     }
 }

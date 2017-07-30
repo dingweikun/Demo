@@ -88,6 +88,33 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 新建项目.
+        /// </summary>
+        internal static string String_NewProject {
+            get {
+                return ResourceManager.GetString("String_NewProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 确定.
+        /// </summary>
+        internal static string String_OK {
+            get {
+                return ResourceManager.GetString("String_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 打开项目.
+        /// </summary>
+        internal static string String_OpenProject {
+            get {
+                return ResourceManager.GetString("String_OpenProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 引用的第三方程序包：.
         /// </summary>
         internal static string String_Packages {
@@ -102,6 +129,15 @@ namespace Demo.Language {
         internal static string String_Settings {
             get {
                 return ResourceManager.GetString("String_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 开始.
+        /// </summary>
+        internal static string String_Start {
+            get {
+                return ResourceManager.GetString("String_Start", resourceCulture);
             }
         }
     }

@@ -19,6 +19,29 @@ namespace Demo.ViewModel
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+
+        public enum MainWindowSubView
+        {
+            StartView = 0,
+            Workspaceview = 1
+        };
+
+
+        private MainWindowSubView currentSubView;
+        public MainWindowSubView CurrentSubView
+        {
+            get => currentSubView;
+            set
+            {
+                if(currentSubView != value)
+                {
+                    currentSubView = value;
+                    RaisePropertyChanged(nameof(CurrentSubView));
+                }
+            }
+        }
+
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>

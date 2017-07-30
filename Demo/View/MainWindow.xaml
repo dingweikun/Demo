@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:view="clr-namespace:Demo.View"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="Demo"
     lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
@@ -14,12 +15,12 @@
     DataContext="{Binding MainWindow, Source={StaticResource ViewModelLocator}}">
 
     <Window.Resources>
-         <ResourceDictionary Source="/ResDict/MainWindow.ResDict.xaml"/>
+        <ResourceDictionary Source="/ResDict/MainWindow.ResDict.xaml"/>
     </Window.Resources>
 
-    <!-- Title Command Buttons -->    
+    <!-- Title Command Buttons -->
     <mahapps:MetroWindow.RightWindowCommands>
-        
+
         <!--Settings Button-->
         <mahapps:WindowCommands ShowLastSeparator="False">
             <ToggleButton x:Name="MainWindowSettingsButton" Focusable="False">
@@ -31,10 +32,10 @@
                                Text="{lex:Loc String_Settings}"/>
                 </StackPanel>
             </ToggleButton>
-            
+
             <!--Help Button-->
             <Button Focusable="False" Command="{Binding HelpButtonCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type mahapps:MetroWindow}}}">
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"
                           Data="{StaticResource HelpIconPathDataKey}" 
@@ -49,7 +50,7 @@
     <!-- Flyouts -->
     <mahapps:MetroWindow.Flyouts>
         <mahapps:FlyoutsControl FontFamily="{StaticResource HeaderFontFamily}">
-            <mahapps:Flyout x:Name="SettingsFlyout" Header="{lex:Loc String_MainWindowSettings}" 
+            <mahapps:Flyout x:Name="SettingsFlyout" Header="{lex:Loc String_Settings}" 
                             Theme="Adapt" Position="Right" 
                             HorizontalContentAlignment="Stretch" 
                             AreAnimationsEnabled="True"
@@ -61,11 +62,27 @@
 
     </mahapps:MetroWindow.Flyouts>
 
+    <!-- Contents -->
+    <TabControl x:Name="RootTabControl" SelectedIndex="{Binding CurrentSubView}">
+        <TabControl.Resources>
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+        </TabControl.Resources>
 
+        <!--<TabControl.ItemContainerStyle>
+            <Style>
+                <Setter Property="TabItem.Visibility" Value="Collapsed"/>
+            </Style>
+        </TabControl.ItemContainerStyle>-->
 
-    <Grid>
+        <TabItem x:Name="StartPageTab">
+            <view:StartView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
+        </TabItem>
 
-        <!--<Button Click="Button_Click">open</Button>-->
-    </Grid>
+        <TabItem x:Name="WorkspaceTab" >
+            <Grid >
+                <TextBlock>设置</TextBlock>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </mahapps:MetroWindow>
  

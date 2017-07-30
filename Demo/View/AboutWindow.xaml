@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:md="clr-namespace:Demo.Model"
     xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
     lex:LocalizeDictionary.DesignCulture="en"
@@ -12,23 +11,19 @@
     mc:Ignorable="d"
     Style="{StaticResource FixedMetroWindowStyle}" 
     Title="{lex:Loc String_About}" 
-    Height="540" Width="600"
+    Height="520" Width="600"
     WindowStartupLocation="CenterScreen">
 
     <mahapps:MetroWindow.Resources>
         <Style TargetType="Image" >
-            <Setter Property="Width" Value="60"/>
-            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Stretch" Value="Uniform"/>
-            <Setter Property="Margin" Value="30,0"/>
+            <Setter Property="Margin" Value="20,0"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="DockPanel.Dock" Value="Left"/>
         </Style>
     </mahapps:MetroWindow.Resources>
-
-    <mahapps:MetroWindow.WindowButtonCommands>
-        <mahapps:WindowButtonCommands Template="{StaticResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
-    </mahapps:MetroWindow.WindowButtonCommands>
 
     <DockPanel Margin="40,20">
         <TextBlock Text="{lex:Loc String_MainWindowTitle}"
@@ -42,56 +37,61 @@
 
         <ScrollViewer>
             <StackPanel Margin="5" >
-                <DockPanel Margin="0,0,0,30">
+                <DockPanel Margin="0,10,0,20">
                     <Image Source="/Icons/mahapps.png" />
                     <TextBlock Text="MahApps.Metro" 
-                               DockPanel.Dock="Top" FontSize="24"/>
+                               DockPanel.Dock="Top" FontSize="20"/>
                     <TextBlock Text="1.5.0" 
-                               DockPanel.Dock="Top" FontSize="18"/>
+                               DockPanel.Dock="Top" FontSize="16"/>
                     <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
-                        <Hyperlink NavigateUri="http://mahapps.com" >
-                            http://mahapps.com
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://mahapps.com">
+                            <Run Text="{Binding RelativeSource={RelativeSource AncestorType=Hyperlink},Path=NavigateUri,Mode=OneWay}"/>
                         </Hyperlink>
                     </TextBlock>
-                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" >
-                        <Hyperlink NavigateUri="https://github.com/MahApps/MahApps.Metro">
-                            https://github.com/MahApps/MahApps.Metro
+                    <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/MahApps/MahApps.Metro" >
+                            <Run Text="{Binding RelativeSource={RelativeSource AncestorType=Hyperlink},Path=NavigateUri,Mode=OneWay}"/>
                         </Hyperlink>
                     </TextBlock>
 
                 </DockPanel>
 
-                <DockPanel Margin="0,0,0,30">
+                <DockPanel Margin="0,10,0,20">
                     <Image Source="/Icons/mvvmlight.png" />
                     <TextBlock Text="MVVM Light" 
-                               DockPanel.Dock="Top" FontSize="24"/>
+                               DockPanel.Dock="Top" FontSize="20"/>
                     <TextBlock Text="5.3.0" 
-                               DockPanel.Dock="Top" FontSize="18"/>
+                               DockPanel.Dock="Top" FontSize="16"/>
                     <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
-                        <Hyperlink NavigateUri="http://www.mvvmlight.net/">
-                            http://www.mvvmlight.net/
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.mvvmlight.net/">
+                            <Run Text="{Binding RelativeSource={RelativeSource AncestorType=Hyperlink},Path=NavigateUri,Mode=OneWay}"/>
                         </Hyperlink>
                     </TextBlock>
                     <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" >
-                        <Hyperlink NavigateUri="http://mvvmlight.codeplex.com/">
-                            http://mvvmlight.codeplex.com/
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://mvvmlight.codeplex.com/">
+                            <Run Text="{Binding RelativeSource={RelativeSource AncestorType=Hyperlink},Path=NavigateUri,Mode=OneWay}"/>
                         </Hyperlink>
                     </TextBlock>
                 </DockPanel>
 
-                <DockPanel Margin="0,0,0,30">
+                <DockPanel Margin="0,10,0,20">
                     <Image Source="/Icons/nuget.png" />
                     <TextBlock Text="WPF Localization Extension" 
-                               DockPanel.Dock="Top" FontSize="24"/>
+                               DockPanel.Dock="Top" FontSize="20"/>
                     <TextBlock Text="2.3.2" 
-                               DockPanel.Dock="Top" FontSize="18"/>
+                               DockPanel.Dock="Top" FontSize="16"/>
                     <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap">
-                        <Hyperlink NavigateUri="https://github.com/SeriousM/WPFLocalizationExtension">
-                            https://github.com/SeriousM/WPFLocalizationExtension
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/SeriousM/WPFLocalizationExtension">
+                            <Run Text="{Binding RelativeSource={RelativeSource AncestorType=Hyperlink},Path=NavigateUri,Mode=OneWay}"/>
                         </Hyperlink>
                     </TextBlock>
                 </DockPanel>
             </StackPanel>
         </ScrollViewer>
+
+        <Button IsCancel="True" VerticalAlignment="Bottom" Margin="10,0,-20,0"
+                 Content="{lex:Loc String_OK}" 
+                 Style="{StaticResource MetroFlatButton}"/>
     </DockPanel>
+
 </mahapps:MetroWindow>

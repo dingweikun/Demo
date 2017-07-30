@@ -126,10 +126,22 @@
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>Demo</value>
   </data>
+  <data name="String_NewProject" xml:space="preserve">
+    <value>New Project</value>
+  </data>
+  <data name="String_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="String_OpenProject" xml:space="preserve">
+    <value>Open Project</value>
+  </data>
   <data name="String_Packages" xml:space="preserve">
     <value>Referenced third party packages :</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="String_Start" xml:space="preserve">
+    <value>Start</value>
   </data>
 </root>

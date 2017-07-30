@@ -126,10 +126,22 @@
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>测试框架</value>
   </data>
+  <data name="String_NewProject" xml:space="preserve">
+    <value>新建项目</value>
+  </data>
+  <data name="String_OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="String_OpenProject" xml:space="preserve">
+    <value>打开项目</value>
+  </data>
   <data name="String_Packages" xml:space="preserve">
     <value>引用的第三方程序包：</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>设置</value>
+  </data>
+  <data name="String_Start" xml:space="preserve">
+    <value>开始</value>
   </data>
 </root>
