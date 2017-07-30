@@ -44,10 +44,12 @@ namespace Demo.ViewModel
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartViewViewModel>();
+            SimpleIoc.Default.Register<AppearenceViewViewModel>();
         }
 
         public MainWindowViewModel MainWindow => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public StartViewViewModel StartView => ServiceLocator.Current.GetInstance<StartViewViewModel>();
+        public AppearenceViewViewModel AppearenceView => ServiceLocator.Current.GetInstance<AppearenceViewViewModel>();
 
 
 

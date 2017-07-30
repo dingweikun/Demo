@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo.Views
+namespace Demo.View
 {
     /// <summary>
     /// SettingsView.xaml 的交互逻辑

@@ -118,30 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="String_About" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
+  </data>
+  <data name="String_DarkTheme" xml:space="preserve">
+    <value>深色主题</value>
   </data>
   <data name="String_Help" xml:space="preserve">
-    <value>Help</value>
+    <value>帮助</value>
+  </data>
+  <data name="String_LightTheme" xml:space="preserve">
+    <value>浅色主题</value>
   </data>
   <data name="String_MainWindowTitle" xml:space="preserve">
-    <value>Demo</value>
+    <value>测试框架</value>
   </data>
   <data name="String_NewProject" xml:space="preserve">
-    <value>New Project</value>
+    <value>新建项目</value>
   </data>
   <data name="String_OK" xml:space="preserve">
-    <value>OK</value>
+    <value>确定</value>
   </data>
   <data name="String_OpenProject" xml:space="preserve">
-    <value>Open Project</value>
+    <value>打开项目</value>
   </data>
   <data name="String_Packages" xml:space="preserve">
-    <value>Referenced third party packages :</value>
+    <value>引用的第三方程序包：</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
+  </data>
+  <data name="String_SettingsAccent" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="String_SettingsAppearence" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="String_SettingsLanguage" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="String_SettingsProjectModules" xml:space="preserve">
+    <value>项目模块</value>
+  </data>
+  <data name="String_SettingsTheme" xml:space="preserve">
+    <value>主题</value>
   </data>
   <data name="String_Start" xml:space="preserve">
-    <value>Start</value>
+    <value>开始</value>
   </data>
 </root>

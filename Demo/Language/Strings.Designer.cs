@@ -61,7 +61,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 关于.
+        ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string String_About {
             get {
@@ -70,7 +70,16 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 帮助.
+        ///   Looks up a localized string similar to Dark Theme.
+        /// </summary>
+        internal static string String_DarkTheme {
+            get {
+                return ResourceManager.GetString("String_DarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
         /// </summary>
         internal static string String_Help {
             get {
@@ -79,7 +88,16 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 测试框架.
+        ///   Looks up a localized string similar to Light Theme.
+        /// </summary>
+        internal static string String_LightTheme {
+            get {
+                return ResourceManager.GetString("String_LightTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Demo.
         /// </summary>
         internal static string String_MainWindowTitle {
             get {
@@ -88,7 +106,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 新建项目.
+        ///   Looks up a localized string similar to New Project.
         /// </summary>
         internal static string String_NewProject {
             get {
@@ -97,7 +115,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 确定.
+        ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string String_OK {
             get {
@@ -106,7 +124,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 打开项目.
+        ///   Looks up a localized string similar to Open Project.
         /// </summary>
         internal static string String_OpenProject {
             get {
@@ -115,7 +133,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 引用的第三方程序包：.
+        ///   Looks up a localized string similar to Referenced third party packages :.
         /// </summary>
         internal static string String_Packages {
             get {
@@ -124,7 +142,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 设置.
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string String_Settings {
             get {
@@ -133,7 +151,52 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 开始.
+        ///   Looks up a localized string similar to Accent.
+        /// </summary>
+        internal static string String_SettingsAccent {
+            get {
+                return ResourceManager.GetString("String_SettingsAccent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appearence.
+        /// </summary>
+        internal static string String_SettingsAppearence {
+            get {
+                return ResourceManager.GetString("String_SettingsAppearence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string String_SettingsLanguage {
+            get {
+                return ResourceManager.GetString("String_SettingsLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Modules.
+        /// </summary>
+        internal static string String_SettingsProjectModules {
+            get {
+                return ResourceManager.GetString("String_SettingsProjectModules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        internal static string String_SettingsTheme {
+            get {
+                return ResourceManager.GetString("String_SettingsTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
         /// </summary>
         internal static string String_Start {
             get {

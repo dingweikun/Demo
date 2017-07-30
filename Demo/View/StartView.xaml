@@ -13,7 +13,7 @@
              >
     
     <UserControl.Resources>
-        <ResourceDictionary Source="/ResDict/StartView.ResDict.xaml"/>
+         <ResourceDictionary Source="pack://application:,,,/Demo;component/ResDict/StartView.ResDict.xaml" />
     </UserControl.Resources>
 
     <Grid>
@@ -86,10 +86,10 @@
         </StackPanel>
 
         <!--History File List-->
-        <StackPanel Grid.Row="1"
+        <!--<StackPanel Grid.Row="1"
                     Orientation="Vertical" MinWidth="260"
                     Margin="60,0" >
-        </StackPanel>
+        </StackPanel>-->
 
 
     </Grid>

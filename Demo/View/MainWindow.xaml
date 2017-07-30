@@ -15,7 +15,7 @@
     DataContext="{Binding MainWindow, Source={StaticResource ViewModelLocator}}">
 
     <Window.Resources>
-        <ResourceDictionary Source="/ResDict/MainWindow.ResDict.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Demo;component/ResDict/MainWindow.ResDict.xaml" />
     </Window.Resources>
 
     <!-- Title Command Buttons -->
@@ -56,7 +56,7 @@
                             AreAnimationsEnabled="True"
                             CloseButtonIsCancel="True"
                             IsOpen="{Binding ElementName=MainWindowSettingsButton, Path=IsChecked}">
-                <!--<view:SettingsView/>-->
+                <view:SettingsView/>
             </mahapps:Flyout>
         </mahapps:FlyoutsControl>
 
@@ -74,11 +74,11 @@
             </Style>
         </TabControl.ItemContainerStyle>-->
 
-        <TabItem x:Name="StartPageTab">
+        <TabItem x:Name="StartPageTab" Header="StartPageTab">
             <view:StartView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
         </TabItem>
 
-        <TabItem x:Name="WorkspaceTab" >
+        <TabItem x:Name="WorkspaceTab" Header="WorkspaceTab" >
             <Grid >
                 <TextBlock>设置</TextBlock>
             </Grid>
