@@ -203,5 +203,14 @@ namespace Demo.Language {
                 return ResourceManager.GetString("String_Start", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting....
+        /// </summary>
+        internal static string String_Starting {
+            get {
+                return ResourceManager.GetString("String_Starting", resourceCulture);
+            }
+        }
     }
 }

@@ -165,4 +165,7 @@
   <data name="String_Start" xml:space="preserve">
     <value>开始</value>
   </data>
+  <data name="String_Starting" xml:space="preserve">
+    <value>启动中……</value>
+  </data>
 </root>

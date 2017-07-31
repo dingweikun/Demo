@@ -90,8 +90,7 @@
         </ScrollViewer>
 
         <Button IsCancel="True" VerticalAlignment="Bottom" Margin="10,0,-20,0"
-                 Content="{lex:Loc String_OK}" 
-                 Style="{StaticResource MetroFlatButton}"/>
+                 Content="{lex:Loc String_OK}" />
     </DockPanel>
 
 </mahapps:MetroWindow>

@@ -1,4 +1,5 @@
 ﻿using Demo.Properties;
+using Demo.View;
 using MahApps.Metro;
 using System;
 using System.Collections.Generic;
@@ -6,8 +7,10 @@ using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using WPFLocalizeExtension.Engine;
 
 namespace Demo
@@ -17,8 +20,7 @@ namespace Demo
     /// </summary>
     public partial class App : Application
     {
-
-
+        public static Window SplashWindow;
 
         public Accent CurrentAccent
         {
@@ -38,12 +40,25 @@ namespace Demo
             set => LocalizeDictionary.Instance.Culture = value;
         }
 
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
             LoadApplicationSettings();
-            MessageBox.Show($"App argu num: {e.Args.Count()}");
+
+            //Thread t = new Thread(() =>
+            //{
+            //    SplashWindow = new SplashWindow();
+            //    SplashWindow.ShowDialog(); //不能用Show
+            //});
+            //t.SetApartmentState(ApartmentState.STA); //设置单线程
+            //t.Start();
+
+            SplashWindow = new SplashWindow();
+            //4     mCounterWindow.ControlWindow = this;
+            SplashWindow.Show();
+            SplashWindow.Closed += (s, arg) =>
+            SplashWindow.Dispatcher.BeginInvokeShutdown(DispatcherPriority.Background);
+            Dispatcher.Run();
         }
 
         protected override void OnExit(ExitEventArgs e)

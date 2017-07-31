@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
 
-    <SolidColorBrush x:Key="StartViewHighLightBrush" Color="#BDBDBD" Opacity="0.2"/>
 
     <Style x:Key="SeperatorStyle" TargetType="Border">
         <Setter Property="Background" Value="#BDBDBD"/>
@@ -9,12 +8,10 @@
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
     </Style>
 
-    <Style x:Key="StartViewButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MetroFlatButton}">
+    <Style x:Key="StartViewButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource AccentFlatButtonStyle}">
         <Setter Property="Margin" Value="0" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -29,16 +26,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource StartViewHighLightBrush}"/>
-                <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource AccentBaseColorBrush}" />
-                <Setter Property="Foreground" Value="{DynamicResource FlatButtonPressedForegroundBrush}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
     
     <PathGeometry x:Key="NewFileIconPathKey">

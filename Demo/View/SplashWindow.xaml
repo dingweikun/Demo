@@ -1,0 +1,19 @@
+﻿<Window x:Class="Demo.View.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en"
+        lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+        mc:Ignorable="d"
+        Title="SplashWindow" Height="250" Width="400"
+        ResizeMode="NoResize" Topmost="True" WindowStyle="None">
+    
+    <StackPanel Margin="50">
+        <TextBlock Text="Demo" Style="{StaticResource HeadTextLevel1}"/>
+        <TextBlock Text="{lex:Loc String_Starting}" Margin="0,40,0,5"/>
+        <ProgressBar IsIndeterminate="True" />
+    </StackPanel>
+</Window>

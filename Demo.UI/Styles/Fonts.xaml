@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:System="clr-namespace:System;assembly=mscorlib">
 
-    <!-- 重新设置 Mahapps.Metro 界面字体，适合中文显示 -->
+    <!-- Override thr Mahapps.Metro font settings to fit Chinese character display -->
     
     <FontFamily x:Key="DefaultFont">Microsoft Yahei UI, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
     <FontFamily x:Key="HeaderFontFamily">Microsoft Yahei UI Light, Segoe UI Light, Lucida Sans Unicode, Verdana</FontFamily>
@@ -42,7 +42,7 @@
     <System:Double x:Key="ToggleSwitchHeaderFontSize.Win10">15</System:Double>
 
 
-    <!-- 附加字体设置 -->
+    <!-- Additional Font Settings -->
     
     <System:Double x:Key="ListFontSize">14</System:Double>
     
