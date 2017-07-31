@@ -9,6 +9,7 @@
     <Style BasedOn="{StaticResource MetroFlatButton}" TargetType="{x:Type Button}" />
 
     <SolidColorBrush x:Key="FlatButtonHighLightBrush" Color="#BDBDBD" Opacity="0.2"/>
+    
     <Style x:Key="AccentFlatButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MetroFlatButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>

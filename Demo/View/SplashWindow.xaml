@@ -9,11 +9,14 @@
         lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
         mc:Ignorable="d"
         Title="SplashWindow" Height="250" Width="400"
-        ResizeMode="NoResize" Topmost="True" WindowStyle="None">
+        ResizeMode="NoResize" WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"
+        > 
     
     <StackPanel Margin="50">
         <TextBlock Text="Demo" Style="{StaticResource HeadTextLevel1}"/>
-        <TextBlock Text="{lex:Loc String_Starting}" Margin="0,40,0,5"/>
+        <TextBlock Text="{lex:Loc String_Starting}" Style="{StaticResource HeadTextLevel3}" Margin="0,40,0,5"/>
         <ProgressBar IsIndeterminate="True" />
     </StackPanel>
 </Window>

@@ -11,7 +11,7 @@
     mc:Ignorable="d"
     Style="{StaticResource FixedMetroWindowStyle}" 
     Title="{lex:Loc String_About}" 
-    Height="520" Width="600"
+    Height="520" Width="550"
     WindowStartupLocation="CenterScreen">
 
     <mahapps:MetroWindow.Resources>
@@ -35,7 +35,11 @@
                    Margin="0,30,0,10"
                    DockPanel.Dock="Top"/>
 
-        <ScrollViewer>
+        <Button IsCancel="True" VerticalAlignment="Bottom" Margin="360,5,0,0"
+                DockPanel.Dock="Bottom"
+                Content="{lex:Loc String_OK}"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="5" >
                 <DockPanel Margin="0,10,0,20">
                     <Image Source="/Icons/mahapps.png" />
@@ -89,8 +93,6 @@
             </StackPanel>
         </ScrollViewer>
 
-        <Button IsCancel="True" VerticalAlignment="Bottom" Margin="10,0,-20,0"
-                 Content="{lex:Loc String_OK}" />
     </DockPanel>
 
 </mahapps:MetroWindow>
