@@ -1,0 +1,10 @@
+2017-8-1
+
+多语言库 在对Splash Window 应用时出错；怀疑与 ResxLocalizationProvider 的多线程应用有关，
+在 Splash Window 线程中设置
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+后，
+除主窗口外，所有弹出（后台程序 new 生成）的窗口，都不能正常显示，会阻塞程序，形成假死。
+所以目前没有在 Splash Window 中进行语言选择。
