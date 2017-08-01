@@ -22,8 +22,10 @@ namespace Demo.View
             {
                 if ((Application.Current as App)?.SplashWindow is Window sw)
                 {
-                    Thread.Sleep(10000);
+                    // pretend to be busy ;)
+                    Thread.Sleep(2000);
                     sw.Dispatcher.Invoke(() => sw.Close());
+                    Activate();
                 }
             };
 #endif

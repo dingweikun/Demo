@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.UI", "Demo.UI\Demo.UI.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "try", "try", "{93450DD1-F2D7-4830-AEFD-289CA580A308}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A058849-B545-4208-8C27-CF703C05C340}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0740C90-A9E6-42FB-8BB5-0EAC713A9A96}"
 	ProjectSection(SolutionItems) = preProject
-		..\Bugs.txt = ..\Bugs.txt
+		Bugs = Bugs
 	EndProjectSection
 EndProject
 Global
