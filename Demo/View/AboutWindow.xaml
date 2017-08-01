@@ -35,7 +35,7 @@
                    Margin="0,30,0,10"
                    DockPanel.Dock="Top"/>
 
-        <Button IsCancel="True" VerticalAlignment="Bottom" Margin="360,5,0,0"
+        <Button IsCancel="True" IsDefault="True" VerticalAlignment="Bottom" Margin="360,5,0,0"
                 DockPanel.Dock="Bottom"
                 Content="{lex:Loc String_OK}"/>
 

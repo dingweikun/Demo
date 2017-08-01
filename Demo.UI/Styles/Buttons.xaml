@@ -6,9 +6,26 @@
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.Buttons.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource MetroFlatButton}" TargetType="{x:Type Button}" />
-
-    <SolidColorBrush x:Key="FlatButtonHighLightBrush" Color="#BDBDBD" Opacity="0.2"/>
+    <Style BasedOn="{StaticResource MetroFlatButton}" TargetType="{x:Type Button}">
+        <Style.Triggers>
+            <Trigger Property="IsDefault" Value="True">
+                <Setter Property="Background" Value="{DynamicResource AccentColorBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource IdealForegroundColorBrush}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="DarkGray" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource FlatButtonPressedBackgroundBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource FlatButtonPressedForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource GrayBrush2}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>  
+        
+    <SolidColorBrush x:Key="FlatButtonHighLightBrush" Color="#BDBDBD" Opacity="0.2"/>    
     
     <Style x:Key="AccentFlatButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MetroFlatButton}">
         <Setter Property="Background" Value="Transparent" />
@@ -20,7 +37,7 @@
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="{DynamicResource AccentBaseColorBrush}" />
-                <Setter Property="Foreground" Value="{DynamicResource FlatButtonPressedForegroundBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource IdealForegroundColorBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
