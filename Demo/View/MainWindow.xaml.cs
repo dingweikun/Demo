@@ -13,15 +13,25 @@ namespace Demo.View
 
         public MainWindow()
         {
+
             InitializeComponent();
+
+#if DEBUG
+            // Splash Window Test
+            Loaded += (sender, e) =>
+            {
+                if ((Application.Current as App)?.SplashWindow is Window sw)
+                {
+                    Thread.Sleep(10000);
+                    sw.Dispatcher.Invoke(() => sw.Close());
+                }
+            };
+#endif
         }
 
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            //var w = new MainWindow();
-            //w.Owner = this;
-            //w.Show();
         }
     }
 }

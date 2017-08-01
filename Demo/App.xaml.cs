@@ -1,6 +1,7 @@
 ﻿using Demo.Properties;
 using MahApps.Metro;
 using System.Globalization;
+using System.Threading;
 using System.Windows;
 using WPFLocalizeExtension.Engine;
 
@@ -11,6 +12,10 @@ namespace Demo
     /// </summary>
     public partial class App : Application
     {
+#if DEBUG
+        // Splash Window Test
+        public Window SplashWindow { get; set; }
+#endif
 
         public Accent CurrentAccent
         {
@@ -30,8 +35,20 @@ namespace Demo
             set => LocalizeDictionary.Instance.Culture = value;
         }
 
+
         protected override void OnStartup(StartupEventArgs e)
         {
+#if DEBUG
+            // Splash Window Test
+
+            Thread t = new Thread(() =>
+            {
+                SplashWindow  = new View.SplashWindow();
+                SplashWindow.ShowDialog();
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+#endif
             LoadApplicationSettings();
             base.OnStartup(e);
         }
