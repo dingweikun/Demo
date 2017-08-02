@@ -204,9 +204,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\mahapps.png" />
-    <Resource Include="Icons\mvvmlight.png" />
-    <Resource Include="Icons\nuget.png" />
+    <Resource Include="Pictures\mahapps.png" />
+    <Resource Include="Pictures\mvvmlight.png" />
+    <Resource Include="Pictures\nuget.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
