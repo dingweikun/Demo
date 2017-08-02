@@ -10,20 +10,30 @@
     xmlns:avalonDockProperties="clr-namespace:Xceed.Wpf.AvalonDock.Properties;assembly=Xceed.Wpf.AvalonDock"
     >
 
-    <!--
-        AvalonDock_ThemeMetro_BaseColor2_ => MenuItemDisabledBrush
-        AvalonDock_ThemeMetro_BaseColor3_ => CheckmarkFill
-        AvalonDock_ThemeMetro_BaseColor4_ => HighlightBrush
-        AvalonDock_ThemeMetro_BaseColor5_ => TextBrush
-    -->
-    
- 
-    
-   
-    
-    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor6"  Color="Blue"/>
-    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor7" Color="Purple"/>
-    
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor1" 
+                     Color="red" Opacity="1"/>
+
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor2" 
+                     Color="Black"/>
+
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor3" 
+                     Color="#41B1E1"/>
+
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor4" 
+                     Color="#5EA1C0"/>
+
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor5" 
+                     Color="#333333"/>
+
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor6" 
+                     Color="#8C8E94"/>
+
+    <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor7" 
+                     Color="Red"/>
+
+
+
+
     <avalonDockConverters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     <avalonDockConverters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"/>
     <avalonDockConverters:AnchorSideToOrientationConverter x:Key="AnchorSideToOrientationConverter"/>
@@ -32,42 +42,101 @@
     <avalonDockConverters:LayoutItemFromLayoutModelConverter x:Key="LayoutItemFromLayoutModelConverter"/>
     <avalonDockConverters:ActivateCommandLayoutItemFromLayoutModelConverter x:Key="ActivateCommandLayoutItemFromLayoutModelConverter"/>
 
-        
-    <Style x:Key="AvalonDock_ThemeMetro_ToolButtonStyle" TargetType="ToggleButton">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Padding" Value="0"/>
+
+
+
+
+
+    <!--LayoutGridResizerControl-->
+    <Style  TargetType="{x:Type avalonDockControls:LayoutGridResizerControl}">
+        <!--<Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor7}"/>-->
+        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
+                <ControlTemplate TargetType="{x:Type avalonDockControls:LayoutGridResizerControl}">
+                    <!--<Border Background="{TemplateBinding Background}" Margin="2"/>-->
+                    <Border Background="{TemplateBinding Background}" MinHeight="4" MinWidth="4"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AvalonDock_Mahapps.Metro_ButtonBaseStyle" TargetType="ButtonBase">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ButtonBase">
                     <Border BorderBrush="{TemplateBinding BorderBrush}"
                             Background="{TemplateBinding Background}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter/>
+                        <ContentPresenter Margin="{TemplateBinding Padding}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="AvalonDock_ThemeMetro_ButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Padding" Value="0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderBrush="{TemplateBinding BorderBrush}"
-                            Background="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <Style x:Key="AvalonDock_ThemeMetro_ToolButtonStyle" TargetType="ToggleButton"
+           BasedOn="{StaticResource AvalonDock_Mahapps.Metro_ButtonBaseStyle}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SemiTransparentGreyBrush}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CheckmarkFill}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
+
+    <Style x:Key="AvalonDock_ThemeMetro_ButtonStyle" TargetType="Button"
+           BasedOn="{StaticResource AvalonDock_Mahapps.Metro_ButtonBaseStyle}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SemiTransparentGreyBrush}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource CheckmarkFill}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+    <Style x:Key="AvalonDock_BaseStyle" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <!--ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok-->
+    <!--ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok-->
+    <!--ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok ok-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--DocumentPaneControlStyle-->
     <Style x:Key="AvalonDock_ThemeMetro_DocumentPaneControlStyle" TargetType="{x:Type avalonDockControls:LayoutDocumentPaneControl}">
@@ -161,7 +230,7 @@
                     <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}"/>
                     <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
                     <Setter Property="Padding" Value="4"/>
                     <Setter Property="Margin" Value="2,0,2,0"/>
@@ -189,15 +258,15 @@
                                     <Trigger Property="Selector.IsSelected"
 								            Value="true">
                                         <Setter Property="BorderBrush"
-									        Value="{DynamicResource TextBrush}" />
+									        Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}" />
                                         <Setter Property="Panel.ZIndex" 
                                             Value="1" />
                                     </Trigger>
 
                                     <DataTrigger Binding="{Binding IsActive}" Value="True">
                                         <Setter Property="BorderBrush"
-									        Value="{DynamicResource CheckmarkFill}" />
-                                        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+									        Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}"/>
                                         <Setter Property="Panel.ZIndex" 
                                             Value="1" />
                                     </DataTrigger>
@@ -207,8 +276,8 @@
                                             <Condition Property="IsMouseOver" Value="true"/>
                                             <Condition Property="Selector.IsSelected" Value="false"/>
                                         </MultiTrigger.Conditions>
-                                        <Setter Property="BorderBrush" Value="{DynamicResource HighlightBrush}"/>
-                                        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                        <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor4}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}"/>
                                         <Setter Property="Panel.ZIndex" Value="0" />
                                     </MultiTrigger>
                                     <Trigger Property="IsEnabled" Value="false">
@@ -288,7 +357,7 @@
                 <Style TargetType="{x:Type TabItem}">
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}"/>
                     <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
                     <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
                     <Setter Property="Template">
@@ -314,15 +383,15 @@
                                     <Trigger Property="Selector.IsSelected"
 								            Value="true">
                                         <Setter Property="BorderBrush"
-									        Value="{DynamicResource TextBrush}" />
+									        Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}" />
                                         <Setter Property="Panel.ZIndex" 
                                             Value="1" />
                                     </Trigger>
 
                                     <DataTrigger Binding="{Binding IsActive}" Value="True">
                                         <Setter Property="BorderBrush"
-									        Value="{DynamicResource CheckmarkFill}" />
-                                        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+									        Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}"/>
                                         <Setter Property="Panel.ZIndex" 
                                             Value="1" />
                                     </DataTrigger>
@@ -331,7 +400,7 @@
                                             <Condition Property="IsMouseOver" Value="true"/>
                                             <Condition Property="Selector.IsSelected" Value="false"/>
                                         </MultiTrigger.Conditions>
-                                        <Setter Property="BorderBrush" Value="{DynamicResource HighlightBrush}"/>
+                                        <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor4}"/>
                                         <Setter Property="Panel.ZIndex" Value="0" />
                                     </MultiTrigger>
                                     <Trigger Property="IsEnabled" Value="false">
@@ -368,6 +437,10 @@
     </Style>
 
     <Style TargetType="avalonDockControls:AnchorablePaneTitle">
+
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}"/>
+        <Setter Property="FontSize" Value="16"/>
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -388,7 +461,7 @@
                                 <ContentPresenter 
                                     x:Name="Header"            
                                     Margin="2,0,0,0"
-                                    TextElement.Foreground="{DynamicResource MenuItemDisabledBrush}"
+                                    TextElement.Foreground="{DynamicResource AvalonDock_ThemeMetro_BaseColor2}"
                                     Content="{Binding Model, RelativeSource={RelativeSource TemplatedParent}}" 
                                     ContentTemplate="{Binding Model.Root.Manager.AnchorableTitleTemplate, RelativeSource={RelativeSource TemplatedParent}}"
                                     ContentTemplateSelector="{Binding Model.Root.Manager.AnchorableTitleTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}"/>
@@ -443,7 +516,7 @@
                             </Setter>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Model.IsActive, RelativeSource={RelativeSource Mode=Self}}" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource CheckmarkFill}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}" />
                             <Setter Property="BorderThickness" Value="0,3,0,0"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Model.IsActive, RelativeSource={RelativeSource Mode=Self}}" Value="True">
@@ -503,7 +576,7 @@
             Margin="4"
             Padding="2">
             <ContentPresenter 
-                    TextElement.Foreground="{DynamicResource MenuItemDisabledBrush}"
+                    TextElement.Foreground="{DynamicResource AvalonDock_ThemeMetro_BaseColor2}"
                     Content="{Binding Model, RelativeSource={RelativeSource TemplatedParent}}" 
                     ContentTemplate="{Binding AnchorableHeaderTemplate, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type avalonDock:DockingManager}, Mode=FindAncestor}}"
                     ContentTemplateSelector="{Binding AnchorableHeaderTemplateSelector, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type avalonDock:DockingManager}, Mode=FindAncestor}}"/>
@@ -523,10 +596,10 @@
                     <Condition Property="IsMouseOver" Value="true"/>
                     <Condition Property="Selector.IsSelected" Value="false"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="BorderBrush" Value="{DynamicResource HighlightBrush}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor4}"/>
             </MultiTrigger>
             <DataTrigger Binding="{Binding Model.IsActive, RelativeSource={RelativeSource Mode=Self}}" Value="true">
-                <Setter Property="BorderBrush" Value="{DynamicResource CheckmarkFill}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}"/>
             </DataTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -743,7 +816,7 @@
 
     <!--DockingManager-->
     <Style x:Key="{x:Type avalonDock:DockingManager}" TargetType="{x:Type avalonDock:DockingManager}">
-        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}"/>
         <Setter Property="DocumentPaneControlStyle" Value="{StaticResource AvalonDock_ThemeMetro_DocumentPaneControlStyle}"/>
         <Setter Property="AnchorablePaneControlStyle" Value="{StaticResource AvalonDock_ThemeMetro_AnchorablePaneControlStyle}"/>
         <Setter Property="AnchorSideTemplate" Value="{StaticResource AvalonDock_ThemeMetro_AnchorSideTemplate}"/>
@@ -794,17 +867,6 @@
         </Setter>
     </Style>
 
-    <!--LayoutGridResizerControl-->
-    <Style x:Key="{x:Type avalonDockControls:LayoutGridResizerControl}" TargetType="{x:Type avalonDockControls:LayoutGridResizerControl}">
-        <Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor7}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type avalonDockControls:LayoutGridResizerControl}">
-                    <Border Background="{TemplateBinding Background}" Margin="2"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
     <Style TargetType="{x:Type avalonDockControls:LayoutDocumentControl}">
         <Setter Property="Template">
@@ -958,7 +1020,7 @@
     </Style>
 
     <Style x:Key="{x:Type avalonDockControls:LayoutDocumentFloatingWindowControl}" TargetType="{x:Type avalonDockControls:LayoutDocumentFloatingWindowControl}">
-        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor6}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="shell:WindowChrome.WindowChrome">
@@ -989,7 +1051,7 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
-                                <Border x:Name="bd" Width="5" VerticalAlignment="Stretch" Background="{DynamicResource TextBrush}"/>
+                                <Border x:Name="bd" Width="5" VerticalAlignment="Stretch" Background="{DynamicResource AvalonDock_ThemeMetro_BaseColor5}"/>
 
                                 <Border x:Name="Header"
                                         Padding="2,0,2,0"
@@ -1074,15 +1136,15 @@
                             <Setter 
                                 TargetName="bd"
                                 Property="Background"
-								Value="{DynamicResource CheckmarkFill}" />
+								Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}" />
                             <Setter 
                                 TargetName="Header"
                                 Property="Background"
-								Value="{DynamicResource CheckmarkFill}" />
+								Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}" />
                             <Setter 
                                 TargetName="Header"
                                 Property="TextElement.Foreground"
-								Value="{DynamicResource WindowBackgroundBrush}" />
+								Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}" />
                         </DataTrigger>
 
                         <Trigger Property="IsMouseOver" SourceName="ContextMenuDropdownButton" Value="True">
@@ -1109,7 +1171,7 @@
     </Style>
 
     <Style x:Key="{x:Type avalonDockControls:LayoutAnchorableFloatingWindowControl}" TargetType="{x:Type avalonDockControls:LayoutAnchorableFloatingWindowControl}">
-        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor6}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="shell:WindowChrome.WindowChrome">
@@ -1136,8 +1198,8 @@
                                 </Grid.RowDefinitions>
                                 <Border x:Name="Header" 
                                         Padding="2,0,2,0"
-                                        TextElement.Foreground="{DynamicResource MenuItemDisabledBrush}"
-                                        Background="{DynamicResource WindowBackgroundBrush}">
+                                        TextElement.Foreground="{DynamicResource AvalonDock_ThemeMetro_BaseColor2}"
+                                        Background="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
@@ -1232,8 +1294,8 @@
                             <Setter Property="Padding" Value="3" TargetName="WindowBorder"/>
                         </Trigger>
                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Model.SinglePane.SelectedContent.IsActive}" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource CheckmarkFill}" TargetName="Header"/>
-                            <Setter Property="TextElement.Foreground" Value="{DynamicResource WindowBackgroundBrush}" TargetName="Header"/>
+                            <Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor3}" TargetName="Header"/>
+                            <Setter Property="TextElement.Foreground" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}" TargetName="Header"/>
                             <Setter Property="Source" TargetName="PART_ImgPinClose" Value="Images/PinClose_Dark.png"/>
                             <Setter Property="Source" TargetName="PART_ImgPinRestore" Value="Images/PinRestore_Dark.png"/>
                             <Setter Property="Source" TargetName="PART_ImgPinMaximize" Value="Images/PinMaximize_Dark.png"/>
@@ -1261,7 +1323,7 @@
     </Style>
 
     <Style x:Key="{x:Type avalonDockControls:LayoutAutoHideWindowControl}" TargetType="{x:Type avalonDockControls:LayoutAutoHideWindowControl}">
-        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}"/>
     </Style>
 
 
