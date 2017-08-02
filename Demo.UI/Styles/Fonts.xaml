@@ -12,8 +12,7 @@
     <FontFamily x:Key="ToggleSwitchHeaderFontFamily">Microsoft Yahei UI Light, Segoe UI Semibold, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
     <FontFamily x:Key="ToggleSwitchFontFamily.Win10">Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
     <FontFamily x:Key="ToggleSwitchHeaderFontFamily.Win10">Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
-
-
+    
     <System:Double x:Key="HeaderFontSize">30</System:Double>
     <System:Double x:Key="SubHeaderFontSize">29.333</System:Double>
     <System:Double x:Key="WindowTitleFontSize">16</System:Double>

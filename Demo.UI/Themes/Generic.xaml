@@ -11,7 +11,7 @@
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
         <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />-->
 
-        
+
         <!-- PART 2. Customized Resource Dictionaries -->
 
         <ResourceDictionary Source="pack://application:,,,/Demo.UI;component/Styles/Fonts.xaml" />
@@ -68,12 +68,22 @@
         <Setter Property="TitleForeground" Value="{DynamicResource TextBrush}"/>
         <Setter Property="Topmost" Value="True"/>
     </Style>
-
-    
-    
-    
-    
     -->
+
+
+    <!--debug-->
+
+    <FontFamily x:Key="DefaultFont">Verdana</FontFamily>
+    <FontFamily x:Key="HeaderFontFamily">Verdana, Microsoft Yahei UI Light, Segoe UI Light, Lucida Sans Unicode, Verdana</FontFamily>
+    <FontFamily x:Key="ContentFontFamily">Verdana, Microsoft Yahei, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
+
+    <FontFamily x:Key="ToggleSwitchFontFamily">Verdana, Microsoft Yahei UI Light, Segoe UI Semibold, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
+    <FontFamily x:Key="ToggleSwitchHeaderFontFamily">Verdana, Microsoft Yahei UI Light, Segoe UI Semibold, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
+    <FontFamily x:Key="ToggleSwitchFontFamily.Win10">Verdana, Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
+    <FontFamily x:Key="ToggleSwitchHeaderFontFamily.Win10">Verdana, Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
+    
+    <!--debug end-->
+
 
 
 </ResourceDictionary>

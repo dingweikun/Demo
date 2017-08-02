@@ -24,5 +24,10 @@ namespace Demo.View
         {
             InitializeComponent();
         }
+
+        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

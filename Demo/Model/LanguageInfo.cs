@@ -13,7 +13,7 @@ namespace Demo.Model
         public static readonly IReadOnlyList<LanguageInfo> Languages = new List<LanguageInfo>()
         {
             new LanguageInfo{Name="English",Culture=new CultureInfo("en")},
-            new LanguageInfo{Name="简体中文",Culture=new CultureInfo("zh")}
+            new LanguageInfo{Name="简体中文",Culture=new CultureInfo("zh-Hans")}
         };
 
         public static LanguageInfo FindLanguage(CultureInfo culture)

@@ -31,9 +31,5 @@ namespace Demo.View
 #endif
         }
 
-
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-        }
     }
 }

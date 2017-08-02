@@ -63,7 +63,9 @@
     </mahapps:MetroWindow.Flyouts>
 
     <!-- Contents -->
-    <TabControl x:Name="RootTabControl" SelectedIndex="{Binding CurrentSubView}">
+    <TabControl x:Name="RootTabControl" 
+                Visibility="{Binding ElementName=MainWindowSettingsButton, Path=IsChecked, Converter={StaticResource BoolToVisibilityHiddenConverter}, Mode=OneWay}"
+                SelectedIndex="{Binding CurrentSubView}">
         <TabControl.Resources>
             <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
         </TabControl.Resources>
@@ -80,9 +82,11 @@
 
         <TabItem x:Name="WorkspaceTab" Header="WorkspaceTab" >
             <Grid >
-                <TextBlock>设置</TextBlock>
+                <view:WorkspaceView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
             </Grid>
         </TabItem>
     </TabControl>
+
+
 </mahapps:MetroWindow>
  

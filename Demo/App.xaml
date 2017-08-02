@@ -17,7 +17,10 @@
                 <!-- 必须直接引用一次 Mahapp 的 Accent 和 AppTheme，否则程序中 ThemeManager 不能正常工作 -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                
+
+                <ResourceDictionary Source="pack://application:,,,/Demo;component/AvalonDock.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/Demo;component/AvalonDock.empty.xaml" />-->
+
             </ResourceDictionary.MergedDictionaries>
 
             <vm:ViewModelLocator x:Key="ViewModelLocator" d:IsDataSource="True"/>
