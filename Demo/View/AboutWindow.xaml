@@ -25,6 +25,10 @@
         </Style>
     </mahapps:MetroWindow.Resources>
 
+    <mahapps:MetroWindow.WindowButtonCommands>
+        <mahapps:WindowButtonCommands Template="{StaticResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
+    </mahapps:MetroWindow.WindowButtonCommands>
+
     <DockPanel Margin="40,20">
         <TextBlock Text="{lex:Loc String_MainWindowTitle}"
                    Style="{StaticResource HeadTextLevel1}"
