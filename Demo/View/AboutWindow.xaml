@@ -23,6 +23,16 @@
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="DockPanel.Dock" Value="Left"/>
         </Style>
+
+        <Style TargetType="Hyperlink">
+            <Setter Property="Foreground" Value="SteelBlue"/>
+            <Setter Property="TextDecorations" Value="None"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </mahapps:MetroWindow.Resources>
 
     <mahapps:MetroWindow.WindowButtonCommands>
