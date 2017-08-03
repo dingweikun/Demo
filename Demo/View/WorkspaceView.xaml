@@ -49,7 +49,7 @@
                     
                     <avalonDock:LayoutAnchorablePaneGroup DockWidth="100">
                         <avalonDock:LayoutAnchorablePane>
-                            <avalonDock:LayoutAnchorable Title="text1" ContentId="text1">
+                            <avalonDock:LayoutAnchorable Title="Toolbox 标题" ContentId="ext1">
                                 <TextBox  TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
                             </avalonDock:LayoutAnchorable>
 

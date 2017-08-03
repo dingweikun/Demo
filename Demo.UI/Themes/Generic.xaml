@@ -73,14 +73,14 @@
 
     <!--debug-->
 
-    <FontFamily x:Key="DefaultFont">Verdana</FontFamily>
+    <!--<FontFamily x:Key="DefaultFont">Verdana</FontFamily>
     <FontFamily x:Key="HeaderFontFamily">Verdana, Microsoft Yahei UI Light, Segoe UI Light, Lucida Sans Unicode, Verdana</FontFamily>
     <FontFamily x:Key="ContentFontFamily">Verdana, Microsoft Yahei, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
 
     <FontFamily x:Key="ToggleSwitchFontFamily">Verdana, Microsoft Yahei UI Light, Segoe UI Semibold, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
     <FontFamily x:Key="ToggleSwitchHeaderFontFamily">Verdana, Microsoft Yahei UI Light, Segoe UI Semibold, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
     <FontFamily x:Key="ToggleSwitchFontFamily.Win10">Verdana, Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
-    <FontFamily x:Key="ToggleSwitchHeaderFontFamily.Win10">Verdana, Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>
+    <FontFamily x:Key="ToggleSwitchHeaderFontFamily.Win10">Verdana, Microsoft Yahei UI Light, Segoe UI, Lucida Sans Unicode, Verdana</FontFamily>-->
     
     <!--debug end-->
 
