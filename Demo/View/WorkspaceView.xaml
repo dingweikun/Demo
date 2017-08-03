@@ -67,19 +67,16 @@
 
                         <avalonDock:LayoutAnchorablePaneGroup DockWidth="100">
                             <avalonDock:LayoutAnchorablePane>
-                                <avalonDock:LayoutAnchorable Title="Toolbox 标题" ContentId="ext1">
-                                    <TextBox  TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
-                                </avalonDock:LayoutAnchorable>
+                                <avalonDock:LayoutAnchorable Title="Toolbox 标题" ContentId="text1">
+                                 </avalonDock:LayoutAnchorable>
 
                                 <avalonDock:LayoutAnchorable Title="text2" ContentId="text2">
-                                    <TextBox  TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
-                                </avalonDock:LayoutAnchorable>
+                                 </avalonDock:LayoutAnchorable>
                             </avalonDock:LayoutAnchorablePane>
                         </avalonDock:LayoutAnchorablePaneGroup>
 
                         <avalonDock:LayoutDocumentPane>
                             <avalonDock:LayoutDocument Title="document1" ContentId="doc1">
-                                <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
                             </avalonDock:LayoutDocument>
 
                             <avalonDock:LayoutAnchorable Title="document2" ContentId="doc1">
