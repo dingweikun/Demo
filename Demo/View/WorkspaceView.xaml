@@ -14,6 +14,7 @@
              >
     <DockPanel>
 
+
         <StackPanel DockPanel.Dock="Left">
 
             <TextBlock Foreground="{DynamicResource TextBrush}">TextBrush</TextBlock>
@@ -34,22 +35,20 @@
 
             <avalonDock:DockingManager Grid.Row="1" x:Name="DManager">
 
-                <!--<avalonDock:DockingManager.Theme>
-                -->
-                <!--<avalonDock:AeroTheme/>-->
-                <!--<avalonDock:VS2010Theme/>-->
-                <!--<avalonDock:ExpressionDarkTheme/>-->
-                <!--<avalonDock:ExpressionLightTheme/>-->
-                <!--<avalonDock:GenericTheme/>-->
-                <!--
-                <avalonDock:MetroTheme/>
-            </avalonDock:DockingManager.Theme>-->
-
                 <avalonDock:LayoutRoot>
                     <avalonDock:LayoutRoot.LeftSide  >
                         <avalonDock:LayoutAnchorSide >
+                            <avalonDock:LayoutAnchorGroup>
+                                <avalonDock:LayoutAnchorable Title="left1" AutoHideWidth="50" ContentId="left1">
+                                    <TextBox Width="80" SelectionChanged="TextBox_SelectionChanged"></TextBox>
+                                </avalonDock:LayoutAnchorable>
+                                <avalonDock:LayoutAnchorable Title="left2" AutoHideWidth="20" ContentId="left2">
+                                    <TextBox Width="80"></TextBox>
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorGroup>
 
                             <avalonDock:LayoutAnchorGroup>
+
                                 <avalonDock:LayoutAnchorable Title="left1" AutoHideWidth="50" ContentId="left1">
                                     <TextBox Width="80" SelectionChanged="TextBox_SelectionChanged"></TextBox>
                                 </avalonDock:LayoutAnchorable>
@@ -61,6 +60,7 @@
                             </avalonDock:LayoutAnchorGroup>
 
                         </avalonDock:LayoutAnchorSide>
+
                     </avalonDock:LayoutRoot.LeftSide>
 
                     <avalonDock:LayoutPanel>
@@ -68,10 +68,15 @@
                         <avalonDock:LayoutAnchorablePaneGroup DockWidth="100">
                             <avalonDock:LayoutAnchorablePane>
                                 <avalonDock:LayoutAnchorable Title="Toolbox 标题" ContentId="text1">
-                                 </avalonDock:LayoutAnchorable>
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>
+                        </avalonDock:LayoutAnchorablePaneGroup>
+                            
+                        <avalonDock:LayoutAnchorablePaneGroup DockWidth="100">
+                            <avalonDock:LayoutAnchorablePane>
 
                                 <avalonDock:LayoutAnchorable Title="text2" ContentId="text2">
-                                 </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorable>
                             </avalonDock:LayoutAnchorablePane>
                         </avalonDock:LayoutAnchorablePaneGroup>
 
@@ -79,9 +84,9 @@
                             <avalonDock:LayoutDocument Title="document1" ContentId="doc1">
                             </avalonDock:LayoutDocument>
 
-                            <avalonDock:LayoutAnchorable Title="document2" ContentId="doc1">
+                            <avalonDock:LayoutDocument Title="document2" ContentId="doc2">
                                 <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
-                            </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutDocument>
                         </avalonDock:LayoutDocumentPane>
 
                     </avalonDock:LayoutPanel>
@@ -91,9 +96,8 @@
             </avalonDock:DockingManager>
 
 
-
         </Grid>
-        
+
     </DockPanel>
 
 
