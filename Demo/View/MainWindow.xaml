@@ -20,9 +20,9 @@
 
     <!-- Title Command Buttons -->
     <mahapps:MetroWindow.RightWindowCommands>
-
-        <!--Settings Button-->
         <mahapps:WindowCommands ShowLastSeparator="False">
+
+            <!--Settings Button-->
             <ToggleButton x:Name="MainWindowSettingsButton" Focusable="False">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"
@@ -80,7 +80,7 @@
             <view:StartView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
         </TabItem>
 
-        <TabItem x:Name="WorkspaceTab" Header="WorkspaceTab" >
+        <TabItem x:Name="WorkspaceTab" Header="WorkspaceTab">
             <Grid >
                 <view:WorkspaceView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
             </Grid>

@@ -6,7 +6,61 @@
         xmlns:local="clr-namespace:Demo.View"
         mc:Ignorable="d"
         Title="NewProjectWindow" Height="300" Width="300">
-    <Grid>
-        <TextBlock Style="{StaticResource HeadTextLevel1}"> New Project</TextBlock>
-    </Grid>
+
+    <Window.Resources>
+        <Style x:Key="TabItem_Style">
+            <Style.Triggers>
+                <Trigger Property="TabItem.IsSelected" Value="True">
+                    <Setter Property="TabItem.Template" >
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Canvas Name="canvas" Background="#FF807FFE" Width="65" Height="30">
+                                    <TextBlock HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center"
+                                               Canvas.Top="3" 
+                                               Text="{TemplateBinding HeaderedContentControl.Header}"
+                                               Canvas.Left="8">
+                                    </TextBlock>
+                                </Canvas>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="TabItem.FontWeight" Value="Bold"/>
+                    <Setter Property="TabItem.Foreground" Value="White"/>
+                </Trigger>
+                <Trigger Property="TabItem.IsMouseOver" Value="True">
+                    <!--<Setter Property="TabItem.Template" >
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Canvas Name="canvas" Background="#FF6160E2">
+                                    <TextBlock HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center"
+                                               
+                                               Text="{TemplateBinding HeaderedContentControl.Header}"
+                                               >
+                                    </TextBlock>
+                                </Canvas>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>-->
+                </Trigger>
+                <!--<Trigger Property="TabItem.IsFocused" Value="True">
+                    <Setter Property="TabItem.Background" Value="Gray"/>
+                </Trigger>-->
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock Style="{StaticResource HeadTextLevel1}"> New Project</TextBlock>
+
+
+        <TabControl VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <TabItem Header="BBB" Style="{StaticResource TabItem_Style}" 
+                     Background="#FF4A4ACC" Margin="1,0,-1,0"
+                     Width="65" Height="30" FontWeight="Normal"/>
+        </TabControl>
+            
+            
+        </StackPanel>
 </Window>

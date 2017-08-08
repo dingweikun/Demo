@@ -142,10 +142,6 @@
     <Compile Include="View\WorkspaceView.xaml.cs">
       <DependentUpon>WorkspaceView.xaml</DependentUpon>
     </Compile>
-    <Page Include="AvalonDock.empty.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="AvalonDock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

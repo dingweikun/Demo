@@ -33,7 +33,7 @@
 
         <Grid>
 
-            <avalonDock:DockingManager Grid.Row="1" x:Name="DManager">
+            <avalonDock:DockingManager Grid.Row="1" x:Name="DManager" Visibility="{Binding RelativeSource={RelativeSource AncestorType=view:WorkspaceView},Path=Visibility}">
 
                 <avalonDock:LayoutRoot>
                     <avalonDock:LayoutRoot.LeftSide  >
@@ -85,7 +85,7 @@
                             </avalonDock:LayoutDocument>
 
                             <avalonDock:LayoutDocument Title="document2" ContentId="doc2">
-                                <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                                <!--<TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>-->
                             </avalonDock:LayoutDocument>
                         </avalonDock:LayoutDocumentPane>
 
