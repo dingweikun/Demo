@@ -27,7 +27,7 @@
         <TabControl x:Name="WorkspaceTabControl" TabStripPlacement="Top" FontFamily="{StaticResource HeaderFontFamily}"
                     mahapps:TabControlHelper.Underlined="SelectedTabItem">
             <TabItem Header="{lex:Loc String_Project}">
-                <view:ProjectView Grid.Row="1"/>
+                <view:ProjectView Margin="0,16,0,0"/>
             </TabItem>
 
             <TabItem Header="{lex:Loc String_Planning}">

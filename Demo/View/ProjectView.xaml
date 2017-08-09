@@ -5,52 +5,58 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"      
              xmlns:local="clr-namespace:Demo.View"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Demo;component/ResDict/ProjectView.ResDict.xaml" />
+    </UserControl.Resources>
+
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <!--<ToolBar/>-->
-
-
-        <avalonDock:DockingManager Grid.Row="1">
-            <avalonDock:LayoutRoot>
-
-                <!--<avalonDock:LayoutRoot.LeftSide  >
-                    <avalonDock:LayoutAnchorSide >
-                        <avalonDock:LayoutAnchorGroup>
-                            <avalonDock:LayoutAnchorable Title="left1" AutoHideWidth="50" ContentId="left1">
-                                <TextBox Width="80" SelectionChanged="TextBox_SelectionChanged"></TextBox>
-                            </avalonDock:LayoutAnchorable>
-                        </avalonDock:LayoutAnchorGroup>
-                    </avalonDock:LayoutAnchorSide>
-                </avalonDock:LayoutRoot.LeftSide>-->
-
-                <avalonDock:LayoutPanel>
-
-                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="100">
-                        <avalonDock:LayoutAnchorablePane>
-                            <avalonDock:LayoutAnchorable Title="Toolbox 标题" ContentId="text1">
-                            </avalonDock:LayoutAnchorable>
-                        </avalonDock:LayoutAnchorablePane>
-                    </avalonDock:LayoutAnchorablePaneGroup>
-
-
-                    <avalonDock:LayoutDocumentPane>
-                        <avalonDock:LayoutDocument Title="document1" ContentId="doc1">
-                        </avalonDock:LayoutDocument>
-                        <avalonDock:LayoutDocument Title="document2" ContentId="doc2">
-                            <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
-                        </avalonDock:LayoutDocument>
-                    </avalonDock:LayoutDocumentPane>
-
-                </avalonDock:LayoutPanel>
-
-            </avalonDock:LayoutRoot>
-
-        </avalonDock:DockingManager>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel MinWidth="300" Grid.Column="0"
+                   Background="{DynamicResource SemiTransparentGreyBrush}">
+            
+            <Expander BorderThickness="6,0,0,0" DockPanel.Dock="Top" Padding="0">
+                <Expander.Header>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
+                        <TextBlock Text="{lex:Loc String_ProjectInfo}" 
+                                   Style="{StaticResource HeadTextStyleKey}"/>
+                    </DockPanel>
+                </Expander.Header>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                </StackPanel>
+            </Expander>
+            <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
+                <Expander.Header>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
+                        <TextBlock Text="{lex:Loc String_ProjectInfo}" 
+                                   Style="{StaticResource HeadTextStyleKey}"/>
+                    </DockPanel>
+                </Expander.Header>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                </StackPanel>
+            </Expander>
+        </DockPanel>
     </Grid>
+
 </UserControl>

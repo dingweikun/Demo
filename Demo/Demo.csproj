@@ -149,6 +149,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResDict\ProjectView.ResDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ResDict\MainWindow.ResDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

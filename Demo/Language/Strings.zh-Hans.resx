@@ -153,8 +153,14 @@
   <data name="String_Planning" xml:space="preserve">
     <value>方案</value>
   </data>
+  <data name="String_PrimaryInfo" xml:space="preserve">
+    <value>基本信息</value>
+  </data>
   <data name="String_Project" xml:space="preserve">
     <value>项目</value>
+  </data>
+  <data name="String_ProjectInfo" xml:space="preserve">
+    <value>项目信息</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>设置</value>

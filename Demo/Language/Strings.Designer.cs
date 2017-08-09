@@ -169,11 +169,29 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Primary.
+        /// </summary>
+        internal static string String_PrimaryInfo {
+            get {
+                return ResourceManager.GetString("String_PrimaryInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Project.
         /// </summary>
         internal static string String_Project {
             get {
                 return ResourceManager.GetString("String_Project", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string String_ProjectInfo {
+            get {
+                return ResourceManager.GetString("String_ProjectInfo", resourceCulture);
             }
         }
         
