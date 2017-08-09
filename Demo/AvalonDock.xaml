@@ -574,12 +574,11 @@
     <!--停靠指示面板-->
     <Style x:Key="{x:Type avalonDockControls:OverlayWindow}" TargetType="{x:Type avalonDockControls:OverlayWindow}">
         <Setter Property="Background" Value="Transparent"/>
-        <!--<Setter Property="Background" Value="Red"/>-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type avalonDockControls:OverlayWindow}">
                     <Canvas x:Name="PART_DropTargetsContainer" Opacity="0.9">
-                        <Path x:Name="PART_PreviewBox" Fill="AliceBlue" StrokeThickness="2" Stroke="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        <Path x:Name="PART_PreviewBox" Fill="{DynamicResource SemiTransparentGreyBrush}" StrokeThickness="2" Stroke="{DynamicResource AccentBaseColorBrush}"/>
                         <Grid x:Name="PART_DockingManagerDropTargets" >
                             <Image x:Name="PART_DockingManagerDropTargetLeft" VerticalAlignment="Center" HorizontalAlignment="Left" Source="Images/DockAnchorableLeft.PNG" Stretch="None" />
                             <Image x:Name="PART_DockingManagerDropTargetRight" VerticalAlignment="Center" HorizontalAlignment="Right" Source="Images/DockAnchorableRight.PNG" Stretch="None" />
@@ -793,8 +792,6 @@
 
     <!--DockingManager-->
     <Style x:Key="{x:Type avalonDock:DockingManager}" TargetType="{x:Type avalonDock:DockingManager}">
-        <!--<Setter Property="Background" Value="{DynamicResource AvalonDock_ThemeMetro_BaseColor1}"/>-->
-        <!--<Setter Property="Background" Value="{DynamicResource SemiTransparentGreyBrush}"/>-->
         <Setter Property="BorderBrush" Value="{DynamicResource SemiTransparentGreyBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="DocumentPaneControlStyle" Value="{StaticResource AvalonDock_ThemeMetro_DocumentPaneControlStyle}"/>

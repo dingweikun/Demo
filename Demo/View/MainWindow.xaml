@@ -21,9 +21,8 @@
     <!-- Title Command Buttons -->
     <mahapps:MetroWindow.RightWindowCommands>
         <mahapps:WindowCommands ShowLastSeparator="False">
-
-            <!--Settings Button-->
-            <ToggleButton x:Name="MainWindowSettingsButton" Focusable="False">
+         <!--Settings Button-->
+           <ToggleButton x:Name="MainWindowSettingsButton" Focusable="False">
                 <StackPanel Orientation="Horizontal">
                     <Path Width="14" Height="14" Stretch="Uniform"
                           Data="{StaticResource SettingsIconPathDataKey}" 
@@ -63,7 +62,7 @@
     </mahapps:MetroWindow.Flyouts>
 
     <!-- Contents -->
-    <TabControl x:Name="RootTabControl" 
+    <TabControl x:Name="RootTabControl" TabStripPlacement="Bottom"
                 Visibility="{Binding ElementName=MainWindowSettingsButton, Path=IsChecked, Converter={StaticResource BoolToVisibilityHiddenConverter}, Mode=OneWay}"
                 SelectedIndex="{Binding CurrentSubView}">
         <TabControl.Resources>
@@ -76,11 +75,12 @@
             </Style>
         </TabControl.ItemContainerStyle>-->
 
+
         <TabItem x:Name="StartPageTab" Header="StartPageTab">
             <view:StartView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
         </TabItem>
 
-        <TabItem x:Name="WorkspaceTab" Header="WorkspaceTab">
+        <TabItem x:Name="WorkspaceTab" Header="WorkspaceTab" >
             <Grid >
                 <view:WorkspaceView Tag="{Binding RelativeSource={RelativeSource AncestorType=view:MainWindow}}"/>
             </Grid>

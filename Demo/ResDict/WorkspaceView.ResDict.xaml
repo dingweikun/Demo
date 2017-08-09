@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+
+
+    <PathGeometry x:Key="ExitIconPathKey">
+        M24.999822,11.536857L24.999822,13.999896C24.999822,14.55288,24.551829,14.999906,23.999835,14.999906L14.999951,14.999906 
+                14.999951,17.999938 23.999835,17.999938C24.551829,17.999938,24.999822,18.446932,24.999822,18.999947L24.999822,21.462955 
+                29.631782,16.499921z M23.999286,7.9990169C24.270729,7.9993349,24.537655,8.1105791,24.730844,8.3168226L31.730754,15.816901C32.089726,16.201914,32.089726,16.797929,31.730754,17.182912L24.730844,24.68299C24.537822,24.888985 
+                24.270827,25.00001 23.999835,25.00001 23.875843,25.00001 23.751852,24.978007 23.632835,24.931008 23.250852,24.779 22.999847,24.410985 22.999847,23.999999L22.999847,19.999958 
+                13.999963,19.999958C13.447969,19.999958,12.999976,19.552931,12.999976,18.999947L12.999976,13.999896C12.999976,13.446881,13.447969,12.999885,13.999963,12.999885L22.999847,12.999885 
+                22.999847,8.9998437C22.999847,8.5888288 23.250852,8.2208135 23.632835,8.0688344 23.751585,8.0216461 23.875902,7.9988721 23.999286,7.9990169z M1,0L20,0C20.552,0,21,0.44700003,21,1L21,11 
+                19,11 19,2 2,2 2,30 19,30 19,23 21,23 21,31C21,31.553,20.552,32,20,32L1,32C0.44799995,32,0,31.553,0,31L0,1C0,0.44700003,0.44799995,0,1,0z
+    </PathGeometry>
+
+    <Style x:Key="ExitButtonStyleKey" TargetType="ButtonBase">
+        <Setter Property="Foreground" Value="{DynamicResource ControlBorderBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ButtonBase">
+                    <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Path Data="{StaticResource ExitIconPathKey}" Stretch="UniformToFill"
+                                      Fill="{TemplateBinding Foreground}" />
+                        </Viewbox>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource AccentColorBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+</ResourceDictionary>

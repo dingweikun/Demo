@@ -123,6 +123,12 @@
   <data name="String_DarkTheme" xml:space="preserve">
     <value>深色主题</value>
   </data>
+  <data name="String_Evaluation" xml:space="preserve">
+    <value>评估</value>
+  </data>
+  <data name="String_ExitProject" xml:space="preserve">
+    <value>退出当前项目</value>
+  </data>
   <data name="String_Help" xml:space="preserve">
     <value>帮助</value>
   </data>
@@ -143,6 +149,12 @@
   </data>
   <data name="String_Packages" xml:space="preserve">
     <value>引用的第三方程序包：</value>
+  </data>
+  <data name="String_Planning" xml:space="preserve">
+    <value>方案</value>
+  </data>
+  <data name="String_Project" xml:space="preserve">
+    <value>项目</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>设置</value>

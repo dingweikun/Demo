@@ -123,6 +123,12 @@
   <data name="String_DarkTheme" xml:space="preserve">
     <value>Dark Theme</value>
   </data>
+  <data name="String_Evaluation" xml:space="preserve">
+    <value>Evaluation</value>
+  </data>
+  <data name="String_ExitProject" xml:space="preserve">
+    <value>Exit Current Project</value>
+  </data>
   <data name="String_Help" xml:space="preserve">
     <value>Help</value>
   </data>
@@ -143,6 +149,12 @@
   </data>
   <data name="String_Packages" xml:space="preserve">
     <value>Referenced third party packages :</value>
+  </data>
+  <data name="String_Planning" xml:space="preserve">
+    <value>Planning</value>
+  </data>
+  <data name="String_Project" xml:space="preserve">
+    <value>Project</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>Settings</value>

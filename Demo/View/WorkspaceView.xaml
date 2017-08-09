@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"      
              xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"      
              xmlns:view="clr-namespace:Demo.View"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              lex:LocalizeDictionary.DesignCulture="en"
@@ -12,7 +12,93 @@
              lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
              mc:Ignorable="d" 
              >
-    <DockPanel>
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Demo;component/ResDict/WorkspaceView.ResDict.xaml" />
+    </UserControl.Resources>
+    
+    <Grid Margin="16,0">
+
+        <Button Width="20" Height="20" Margin="12" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Style="{StaticResource ExitButtonStyleKey}"
+                ToolTip="{lex:Loc String_ExitProject}"/>
+        
+        <!-- Contents -->
+        <TabControl x:Name="WorkspaceTabControl" TabStripPlacement="Top" FontFamily="{StaticResource HeaderFontFamily}"
+                    mahapps:TabControlHelper.Underlined="SelectedTabItem">
+            <TabItem Header="{lex:Loc String_Project}">
+                <view:ProjectView Grid.Row="1"/>
+            </TabItem>
+
+            <TabItem Header="{lex:Loc String_Planning}">
+                <TextBlock> Project Plans</TextBlock>
+            </TabItem>
+
+            <TabItem Header="{lex:Loc String_Evaluation}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<ToolBar/>-->
+
+
+                    <avalonDock:DockingManager Grid.Row="1">
+                        <avalonDock:LayoutRoot>
+
+                            <!--<avalonDock:LayoutRoot.LeftSide  >
+                    <avalonDock:LayoutAnchorSide >
+                        <avalonDock:LayoutAnchorGroup>
+                            <avalonDock:LayoutAnchorable Title="left1" AutoHideWidth="50" ContentId="left1">
+                                <TextBox Width="80" SelectionChanged="TextBox_SelectionChanged"></TextBox>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorGroup>
+                    </avalonDock:LayoutAnchorSide>
+                </avalonDock:LayoutRoot.LeftSide>-->
+
+                            <avalonDock:LayoutPanel>
+
+                                <avalonDock:LayoutAnchorablePaneGroup DockWidth="100">
+                                    <avalonDock:LayoutAnchorablePane>
+                                        <avalonDock:LayoutAnchorable Title="Toolbox 标题" ContentId="text1">
+                                        </avalonDock:LayoutAnchorable>
+                                    </avalonDock:LayoutAnchorablePane>
+                                </avalonDock:LayoutAnchorablePaneGroup>
+
+
+                                <avalonDock:LayoutDocumentPane>
+                                    <avalonDock:LayoutDocument Title="document1" ContentId="doc1">
+                                    </avalonDock:LayoutDocument>
+                                    <avalonDock:LayoutDocument Title="document2" ContentId="doc2">
+                                        <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                                    </avalonDock:LayoutDocument>
+                                </avalonDock:LayoutDocumentPane>
+
+                            </avalonDock:LayoutPanel>
+
+                        </avalonDock:LayoutRoot>
+
+                    </avalonDock:DockingManager>
+                </Grid>
+ </TabItem>
+        </TabControl>
+    </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<DockPanel>
 
 
         <StackPanel DockPanel.Dock="Left">
@@ -85,7 +171,9 @@
                             </avalonDock:LayoutDocument>
 
                             <avalonDock:LayoutDocument Title="document2" ContentId="doc2">
-                                <!--<TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>-->
+                                -->
+    <!--<TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>-->
+    <!--
                             </avalonDock:LayoutDocument>
                         </avalonDock:LayoutDocumentPane>
 
@@ -98,7 +186,7 @@
 
         </Grid>
 
-    </DockPanel>
+    </DockPanel>-->
 
 
 </UserControl>

@@ -79,6 +79,24 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Evaluation.
+        /// </summary>
+        internal static string String_Evaluation {
+            get {
+                return ResourceManager.GetString("String_Evaluation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit Current Project.
+        /// </summary>
+        internal static string String_ExitProject {
+            get {
+                return ResourceManager.GetString("String_ExitProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         internal static string String_Help {
@@ -138,6 +156,24 @@ namespace Demo.Language {
         internal static string String_Packages {
             get {
                 return ResourceManager.GetString("String_Packages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planning.
+        /// </summary>
+        internal static string String_Planning {
+            get {
+                return ResourceManager.GetString("String_Planning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project.
+        /// </summary>
+        internal static string String_Project {
+            get {
+                return ResourceManager.GetString("String_Project", resourceCulture);
             }
         }
         

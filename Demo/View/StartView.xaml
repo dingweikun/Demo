@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
 
          <!--Background Watermark-->
-        <Border Grid.ColumnSpan="5" Grid.RowSpan="5" IsHitTestVisible="False">
+        <Border Grid.ColumnSpan="5" Grid.RowSpan="5" IsHitTestVisible="False" MinHeight="500">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="40"
                     Width="200" Height="200">
                 <Path Data="{StaticResource NewFileIconPathKey}" Stretch="Uniform"
