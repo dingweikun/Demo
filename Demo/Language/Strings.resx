@@ -123,11 +123,23 @@
   <data name="String_DarkTheme" xml:space="preserve">
     <value>Dark Theme</value>
   </data>
+  <data name="String_Demands" xml:space="preserve">
+    <value>Demands</value>
+  </data>
   <data name="String_Evaluation" xml:space="preserve">
-    <value>Evaluation</value>
+    <value> Evaluation </value>
   </data>
   <data name="String_ExitProject" xml:space="preserve">
     <value>Exit Current Project</value>
+  </data>
+  <data name="String_FossilFuelsResources" xml:space="preserve">
+    <value>Fossil Fuels</value>
+  </data>
+  <data name="String_GeographicInfo" xml:space="preserve">
+    <value>Geographic</value>
+  </data>
+  <data name="String_GeothermalResources" xml:space="preserve">
+    <value>Geothermal</value>
   </data>
   <data name="String_Help" xml:space="preserve">
     <value>Help</value>
@@ -147,20 +159,32 @@
   <data name="String_OpenProject" xml:space="preserve">
     <value>Open Project</value>
   </data>
+  <data name="String_OtherDemands" xml:space="preserve">
+    <value>Others</value>
+  </data>
   <data name="String_Packages" xml:space="preserve">
     <value>Referenced third party packages :</value>
   </data>
   <data name="String_Planning" xml:space="preserve">
-    <value>Planning</value>
+    <value> Planning </value>
+  </data>
+  <data name="String_PolicySupporting" xml:space="preserve">
+    <value>Policy</value>
+  </data>
+  <data name="String_PowerDemands" xml:space="preserve">
+    <value>Power </value>
   </data>
   <data name="String_PrimaryInfo" xml:space="preserve">
     <value>Primary</value>
   </data>
   <data name="String_Project" xml:space="preserve">
-    <value>Project</value>
+    <value> Project </value>
   </data>
   <data name="String_ProjectInfo" xml:space="preserve">
     <value>Information</value>
+  </data>
+  <data name="String_Resources" xml:space="preserve">
+    <value>Resources</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>Settings</value>
@@ -180,10 +204,25 @@
   <data name="String_SettingsTheme" xml:space="preserve">
     <value>Theme</value>
   </data>
+  <data name="String_SolarResources" xml:space="preserve">
+    <value>Solar</value>
+  </data>
   <data name="String_Start" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="String_Starting" xml:space="preserve">
     <value>Starting...</value>
+  </data>
+  <data name="String_Supporting" xml:space="preserve">
+    <value>Supporting</value>
+  </data>
+  <data name="String_ThermalDemands" xml:space="preserve">
+    <value>Thermal</value>
+  </data>
+  <data name="String_WaterResources" xml:space="preserve">
+    <value>Water</value>
+  </data>
+  <data name="String_WindResources" xml:space="preserve">
+    <value>Wind</value>
   </data>
 </root>

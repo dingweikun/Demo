@@ -123,11 +123,23 @@
   <data name="String_DarkTheme" xml:space="preserve">
     <value>深色主题</value>
   </data>
+  <data name="String_Demands" xml:space="preserve">
+    <value>需求</value>
+  </data>
   <data name="String_Evaluation" xml:space="preserve">
-    <value>评估</value>
+    <value> 评估 </value>
   </data>
   <data name="String_ExitProject" xml:space="preserve">
     <value>退出当前项目</value>
+  </data>
+  <data name="String_FossilFuelsResources" xml:space="preserve">
+    <value>化石燃料</value>
+  </data>
+  <data name="String_GeographicInfo" xml:space="preserve">
+    <value>地理信息</value>
+  </data>
+  <data name="String_GeothermalResources" xml:space="preserve">
+    <value>地热资源</value>
   </data>
   <data name="String_Help" xml:space="preserve">
     <value>帮助</value>
@@ -147,20 +159,32 @@
   <data name="String_OpenProject" xml:space="preserve">
     <value>打开项目</value>
   </data>
+  <data name="String_OtherDemands" xml:space="preserve">
+    <value>其它</value>
+  </data>
   <data name="String_Packages" xml:space="preserve">
     <value>引用的第三方程序包：</value>
   </data>
   <data name="String_Planning" xml:space="preserve">
-    <value>方案</value>
+    <value> 方案 </value>
+  </data>
+  <data name="String_PolicySupporting" xml:space="preserve">
+    <value>政策</value>
+  </data>
+  <data name="String_PowerDemands" xml:space="preserve">
+    <value>电力</value>
   </data>
   <data name="String_PrimaryInfo" xml:space="preserve">
     <value>基本信息</value>
   </data>
   <data name="String_Project" xml:space="preserve">
-    <value>项目</value>
+    <value> 项目 </value>
   </data>
   <data name="String_ProjectInfo" xml:space="preserve">
     <value>项目信息</value>
+  </data>
+  <data name="String_Resources" xml:space="preserve">
+    <value>资源</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>设置</value>
@@ -180,10 +204,25 @@
   <data name="String_SettingsTheme" xml:space="preserve">
     <value>主题</value>
   </data>
+  <data name="String_SolarResources" xml:space="preserve">
+    <value>光资源</value>
+  </data>
   <data name="String_Start" xml:space="preserve">
     <value>开始</value>
   </data>
   <data name="String_Starting" xml:space="preserve">
     <value>启动中……</value>
+  </data>
+  <data name="String_Supporting" xml:space="preserve">
+    <value>配套</value>
+  </data>
+  <data name="String_ThermalDemands" xml:space="preserve">
+    <value>热能</value>
+  </data>
+  <data name="String_WaterResources" xml:space="preserve">
+    <value>水资源</value>
+  </data>
+  <data name="String_WindResources" xml:space="preserve">
+    <value>风资源</value>
   </data>
 </root>

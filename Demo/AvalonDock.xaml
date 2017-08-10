@@ -11,6 +11,8 @@
     >
 
     <!--
+    
+    
     <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor1" Color="red" Opacity="1"/>
     <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor2" Color="Yellow"/>
     <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor3" Color="#41B1E1"/>
@@ -18,6 +20,8 @@
     <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor5" Color="#333333"/>
     <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor6" Color="#8C8E94"/>
     <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor7" Color="Red"/>
+    
+    
     -->
 
 

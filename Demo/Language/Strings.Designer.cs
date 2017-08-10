@@ -79,7 +79,16 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Evaluation.
+        ///   Looks up a localized string similar to Demands.
+        /// </summary>
+        internal static string String_Demands {
+            get {
+                return ResourceManager.GetString("String_Demands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Evaluation .
         /// </summary>
         internal static string String_Evaluation {
             get {
@@ -93,6 +102,33 @@ namespace Demo.Language {
         internal static string String_ExitProject {
             get {
                 return ResourceManager.GetString("String_ExitProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fossil Fuels.
+        /// </summary>
+        internal static string String_FossilFuelsResources {
+            get {
+                return ResourceManager.GetString("String_FossilFuelsResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geographic.
+        /// </summary>
+        internal static string String_GeographicInfo {
+            get {
+                return ResourceManager.GetString("String_GeographicInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geothermal.
+        /// </summary>
+        internal static string String_GeothermalResources {
+            get {
+                return ResourceManager.GetString("String_GeothermalResources", resourceCulture);
             }
         }
         
@@ -151,6 +187,15 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Others.
+        /// </summary>
+        internal static string String_OtherDemands {
+            get {
+                return ResourceManager.GetString("String_OtherDemands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referenced third party packages :.
         /// </summary>
         internal static string String_Packages {
@@ -160,11 +205,29 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Planning.
+        ///   Looks up a localized string similar to  Planning .
         /// </summary>
         internal static string String_Planning {
             get {
                 return ResourceManager.GetString("String_Planning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Policy.
+        /// </summary>
+        internal static string String_PolicySupporting {
+            get {
+                return ResourceManager.GetString("String_PolicySupporting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Power .
+        /// </summary>
+        internal static string String_PowerDemands {
+            get {
+                return ResourceManager.GetString("String_PowerDemands", resourceCulture);
             }
         }
         
@@ -178,7 +241,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Project.
+        ///   Looks up a localized string similar to  Project .
         /// </summary>
         internal static string String_Project {
             get {
@@ -192,6 +255,15 @@ namespace Demo.Language {
         internal static string String_ProjectInfo {
             get {
                 return ResourceManager.GetString("String_ProjectInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resources.
+        /// </summary>
+        internal static string String_Resources {
+            get {
+                return ResourceManager.GetString("String_Resources", resourceCulture);
             }
         }
         
@@ -250,6 +322,15 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solar.
+        /// </summary>
+        internal static string String_SolarResources {
+            get {
+                return ResourceManager.GetString("String_SolarResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         internal static string String_Start {
@@ -264,6 +345,42 @@ namespace Demo.Language {
         internal static string String_Starting {
             get {
                 return ResourceManager.GetString("String_Starting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supporting.
+        /// </summary>
+        internal static string String_Supporting {
+            get {
+                return ResourceManager.GetString("String_Supporting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thermal.
+        /// </summary>
+        internal static string String_ThermalDemands {
+            get {
+                return ResourceManager.GetString("String_ThermalDemands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water.
+        /// </summary>
+        internal static string String_WaterResources {
+            get {
+                return ResourceManager.GetString("String_WaterResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wind.
+        /// </summary>
+        internal static string String_WindResources {
+            get {
+                return ResourceManager.GetString("String_WindResources", resourceCulture);
             }
         }
     }

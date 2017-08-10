@@ -21,42 +21,76 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel MinWidth="300" Grid.Column="0"
-                   Background="{DynamicResource SemiTransparentGreyBrush}">
-            
-            <Expander BorderThickness="6,0,0,0" DockPanel.Dock="Top" Padding="0">
-                <Expander.Header>
-                    <DockPanel>
-                        <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                        <TextBlock Text="{lex:Loc String_ProjectInfo}" 
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <DockPanel MinWidth="300" Background="{DynamicResource SemiTransparentGreyBrush}">
+
+                <Expander BorderThickness="6,0,0,0" DockPanel.Dock="Top" Padding="0">
+                    <Expander.Header>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
+                            <TextBlock Text="{lex:Loc String_ProjectInfo}" 
                                    Style="{StaticResource HeadTextStyleKey}"/>
-                    </DockPanel>
-                </Expander.Header>
-                <StackPanel Orientation="Vertical">
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                </StackPanel>
-            </Expander>
-            <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
-                <Expander.Header>
-                    <DockPanel>
-                        <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                        <TextBlock Text="{lex:Loc String_ProjectInfo}" 
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Orientation="Vertical">
+                        <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_GeographicInfo}" VerticalAlignment="Stretch" />
+                    </StackPanel>
+                </Expander>
+
+
+                <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
+                    <Expander.Header>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
+                            <TextBlock Text="{lex:Loc String_Resources}" 
                                    Style="{StaticResource HeadTextStyleKey}"/>
-                    </DockPanel>
-                </Expander.Header>
-                <StackPanel Orientation="Vertical">
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                    <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                </StackPanel>
-            </Expander>
-        </DockPanel>
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Orientation="Vertical">
+                        <Button Content="{lex:Loc String_WindResources}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_SolarResources}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_GeothermalResources}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_WaterResources}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_FossilFuelsResources}" VerticalAlignment="Stretch" />
+                    </StackPanel>
+                </Expander>
+
+
+                <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
+                    <Expander.Header>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
+                            <TextBlock Text="{lex:Loc String_Demands}" 
+                                   Style="{StaticResource HeadTextStyleKey}"/>
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Orientation="Vertical">
+                        <Button Content="{lex:Loc String_PowerDemands}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_ThermalDemands}" VerticalAlignment="Stretch" />
+                        <Button Content="{lex:Loc String_OtherDemands}" VerticalAlignment="Stretch" />
+                    </StackPanel>
+                </Expander>
+
+
+                <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
+                    <Expander.Header>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
+                            <TextBlock Text="{lex:Loc String_Supporting}" 
+                                   Style="{StaticResource HeadTextStyleKey}"/>
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Orientation="Vertical">
+                        <Button Content="{lex:Loc String_PolicySupporting}" VerticalAlignment="Stretch" />
+                    </StackPanel>
+                </Expander>
+
+
+            </DockPanel>
+        </ScrollViewer>
+
     </Grid>
 
 </UserControl>
