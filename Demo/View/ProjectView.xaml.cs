@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace Demo.View
         public ProjectView()
         {
             InitializeComponent();
+
+
+            // --------------------------
+            
+            foreach(var md in ProjectModuleManager.Instance.Modules)
+            {
+                TabItem item = new TabItem();
+                item.Content = md;
+                item.Header = md.ModuleName;
+                (md as UserControl).Visibility = Visibility.Visible;
+                RootTab.Items.Add(item);
+            }
+
+        }
+
+        private void Expander_Expanded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(e.Source.ToString());
         }
     }
 }

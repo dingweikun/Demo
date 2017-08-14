@@ -21,44 +21,35 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
+
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <DockPanel MinWidth="300" Background="{DynamicResource SemiTransparentGreyBrush}">
-
-                <Expander BorderThickness="6,0,0,0" DockPanel.Dock="Top" Padding="0">
+            <DockPanel MinWidth="260" >
+                <Expander GotFocus="Expander_Expanded">
                     <Expander.Header>
-                        <DockPanel>
-                            <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                            <TextBlock Text="{lex:Loc String_ProjectInfo}" 
-                                   Style="{StaticResource HeadTextStyleKey}"/>
-                        </DockPanel>
+                        <TextBlock Text="{lex:Loc String_ProjectInfo}" Style="{StaticResource HeadTextStyleKey}"/>
                     </Expander.Header>
                     <StackPanel Orientation="Vertical">
-                        <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                        <Button Content="{lex:Loc String_GeographicInfo}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_GeographicInfo}" VerticalAlignment="Stretch" />
                     </StackPanel>
                 </Expander>
 
 
-                <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
+                <Expander >
                     <Expander.Header>
-                        <DockPanel>
-                            <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                            <TextBlock Text="{lex:Loc String_Resources}" 
-                                   Style="{StaticResource HeadTextStyleKey}"/>
-                        </DockPanel>
+                        <TextBlock Text="{lex:Loc String_Resources}"   Style="{StaticResource HeadTextStyleKey}"/>
                     </Expander.Header>
                     <StackPanel Orientation="Vertical">
-                        <Button Content="{lex:Loc String_WindResources}" VerticalAlignment="Stretch" />
-                        <Button Content="{lex:Loc String_SolarResources}" VerticalAlignment="Stretch" />
-                        <Button Content="{lex:Loc String_GeothermalResources}" VerticalAlignment="Stretch" />
-                        <Button Content="{lex:Loc String_WaterResources}" VerticalAlignment="Stretch" />
-                        <Button Content="{lex:Loc String_FossilFuelsResources}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_WindResources}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_SolarResources}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_GeothermalResources}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_WaterResources}" VerticalAlignment="Stretch" />
+                        <ToggleButton Content="{lex:Loc String_FossilFuelsResources}" VerticalAlignment="Stretch" />
                     </StackPanel>
                 </Expander>
 
 
-                <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
+                <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0">
                     <Expander.Header>
                         <DockPanel>
                             <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
@@ -85,11 +76,15 @@
                     <StackPanel Orientation="Vertical">
                         <Button Content="{lex:Loc String_PolicySupporting}" VerticalAlignment="Stretch" />
                     </StackPanel>
-                </Expander>
+                </Expander>-->
 
 
             </DockPanel>
         </ScrollViewer>
+
+        <TabControl x:Name="RootTab" Grid.Column="1" Background="Gray">
+            
+        </TabControl>
 
     </Grid>
 
