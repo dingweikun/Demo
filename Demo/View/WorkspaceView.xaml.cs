@@ -29,5 +29,10 @@ namespace Demo.View
         private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
         }
+
+        private void ProjectView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

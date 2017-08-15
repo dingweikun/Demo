@@ -5,8 +5,8 @@
     <Setting Name="ProjectModulePath" Type="System.String" Scope="Application">
       <Value Profile="(Default)">ProjectModule</Value>
     </Setting>
-    <Setting Name="InfoModules" Type="System.String" Scope="User">
-      <Value Profile="(Default)">  Demo.PrimaryInfo.Module.dll  ;  eon fe aa.dll ;dfaef.dll; asdfa asd.dll  </Value>
+    <Setting Name="ProjectModules" Type="System.String" Scope="User">
+      <Value Profile="(Default)">  Demo.PrimaryInfo.Module.dll  ;  eon fe aa.dll ;dfaef.dll; asdfa asd.dll  ;Module.PrimaryInfo.dll</Value>
     </Setting>
   </Settings>
 </SettingsFile>

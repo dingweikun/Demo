@@ -1,4 +1,5 @@
-﻿using Demo.Model;
+﻿using Demo.Manager;
+using Demo.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,12 +28,13 @@ namespace Demo.View
 
 
             // --------------------------
-            
-            foreach(var md in ProjectModuleManager.Instance.Modules)
+
+            foreach (var md in ProjectModuleManager.Instance.Modules)
             {
+                if (md == null) continue;
                 TabItem item = new TabItem();
                 item.Content = md;
-                item.Header = md.ModuleName;
+                item.Header = md.ModuleTitle;
                 (md as UserControl).Visibility = Visibility.Visible;
                 RootTab.Items.Add(item);
             }

@@ -26,13 +26,14 @@
         <!-- Contents -->
         <TabControl x:Name="WorkspaceTabControl" TabStripPlacement="Top" FontFamily="{StaticResource HeaderFontFamily}"
                     mahapps:TabControlHelper.Underlined="SelectedTabItem">
-            <TabItem Header="{lex:Loc String_Project}">
-                <view:ProjectView Margin="0,16,0,0"/>
-            </TabItem>
-
             <TabItem Header="{lex:Loc String_Planning}">
                 <view:TestView Margin="0,16,0,0"/>
             </TabItem>
+
+            <TabItem Header="{lex:Loc String_Project}">
+                <view:ProjectView Margin="0,16,0,0" Loaded="ProjectView_Loaded"/>
+            </TabItem>
+
 
             <TabItem Header="{lex:Loc String_Evaluation}">
                 <Grid>

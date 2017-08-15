@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo.Module
+namespace C1
 {
     /// <summary>
-    /// Interaction logic for PrimaryInfoModule.xaml
+    /// Interaction logic for CC1.xaml
     /// </summary>
-    public partial class PrimaryInfoModule : ProjectModule
+    public partial class CC1 : UserControl
     {
-        public PrimaryInfoModule()
+        public CC1()
         {
             InitializeComponent();
         }
-
-        public override string ModuleName => nameof(PrimaryInfoModule);
-
-        public override void UpdateModule() => MessageBox.Show("PrimaryInfoModule Update !");
-
     }
 }

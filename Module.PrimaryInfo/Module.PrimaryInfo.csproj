@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2766FB87-73A6-464C-9A83-D70D274AF2C1}</ProjectGuid>
+    <ProjectGuid>{C4F5CAC2-0E3C-4AF3-B038-6E296E1191C7}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>Demo.Module</RootNamespace>
-    <AssemblyName>Demo.Module</AssemblyName>
+    <RootNamespace>Demo.Module.PrimaryInfo</RootNamespace>
+    <AssemblyName>Module.PrimaryInfo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\ProjectModule\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\ProjectModule\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -45,11 +45,22 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfLocalizeExtension.2.3.2\lib\net35\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAMLMarkupExtensions.1.2.2\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IProjectModule.cs" />
-    <Compile Include="ProjectModule.cs" />
-    <Compile Include="ProjectModuleAttribute.cs" />
+    <Compile Include="Language\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrimaryInfoModule.xaml.cs">
+      <DependentUpon>PrimaryInfoModule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -63,14 +74,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Language\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\Strings.zh-Hans.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="PrimaryInfoModule.ResDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrimaryInfoModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Module\Demo.Module.csproj">
+      <Project>{2766fb87-73a6-464c-9a83-d70d274af2c1}</Project>
+      <Name>Demo.Module</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

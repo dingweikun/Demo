@@ -1,0 +1,35 @@
+﻿<md:ProjectModule x:Class="Demo.Module.PrimaryInfo.PrimaryInfoModule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:md="clr-namespace:Demo.Module;assembly=Demo.Module"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="Module.PrimaryInfo"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+             xmlns:local="clr-namespace:Demo.Module.PrimaryInfo"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <!--lex:ResxLocalizationProvider.DefaultAssembly="Module.PrimaryInfo"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"-->
+
+    <md:ProjectModule.Resources>
+        <ResourceDictionary Source="PrimaryInfoModule.ResDict.xaml" />
+    </md:ProjectModule.Resources>
+
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding RelativeSource={RelativeSource Self}, Path = ModuleTitle}"/>
+            <Border>
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Click="ToggleButton_Click1" Content="{lex:Loc String_TTT}" />
+                    <ToggleButton Click="ToggleButton_Click2">Edit 编辑模块</ToggleButton>
+                </StackPanel>
+            </Border>
+            <TextBlock>This is a external module</TextBlock>
+            <TextBlock>这是一个外部模块</TextBlock>
+        </StackPanel>
+    </Grid>
+</md:ProjectModule>

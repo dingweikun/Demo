@@ -12,17 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFLocalizeExtension.Engine;
 
-namespace ProjectModule
+namespace C1
 {
     /// <summary>
-    /// Interaction logic for PrimaryInfoModule.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class PrimaryInfoModule : UserControl
+    public partial class MainWindow : Window
     {
-        public PrimaryInfoModule()
+        public MainWindow()
         {
             InitializeComponent();
+
+ 
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LocalizeDictionary.Instance.Culture = new System.Globalization.CultureInfo("zh");
+
         }
     }
 }

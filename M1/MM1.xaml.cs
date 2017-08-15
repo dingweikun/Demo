@@ -1,8 +1,6 @@
-﻿using Demo.Manager;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo.View
+namespace M1
 {
     /// <summary>
-    /// Interaction logic for TestView.xaml
+    /// Interaction logic for MM1.xaml
     /// </summary>
-    public partial class TestView : UserControl
+    public partial class MM1 : UserControl
     {
-        public TestView()
+        public MM1()
         {
             InitializeComponent();
         }
-
-        private void Button_Click_test1(object sender, RoutedEventArgs e)
-        {
-           // ProjectModuleManager.Instance.ReloadModules();
-        }
-
     }
 }

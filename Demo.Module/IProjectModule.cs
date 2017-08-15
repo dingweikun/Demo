@@ -8,8 +8,7 @@ namespace Demo.Module
 {
     public interface IProjectModule
     {
-        string ModuleName { get; }
+        string ModuleTitle { get; }
         bool IsInEdit { get; }
-        void UpdateModule();
-     }
+    }
 }

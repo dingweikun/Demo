@@ -34,13 +34,14 @@ namespace Demo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("  Demo.PrimaryInfo.Module.dll  ;  eon fe aa.dll ;dfaef.dll; asdfa asd.dll  ")]
-        public string InfoModules {
+        [global::System.Configuration.DefaultSettingValueAttribute("  Demo.PrimaryInfo.Module.dll  ;  eon fe aa.dll ;dfaef.dll; asdfa asd.dll  ;Modul" +
+            "e.PrimaryInfo.dll")]
+        public string ProjectModules {
             get {
-                return ((string)(this["InfoModules"]));
+                return ((string)(this["ProjectModules"]));
             }
             set {
-                this["InfoModules"] = value;
+                this["ProjectModules"] = value;
             }
         }
     }

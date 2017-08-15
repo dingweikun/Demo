@@ -9,7 +9,21 @@ namespace Demo.Module
     [AttributeUsage(AttributeTargets.Class)]
     public class ProjectModuleAttribute : System.Attribute
     {
-        public string Name { get; set; }
-        public Type Type { get; set; }
+        /// <summary>
+        /// Module type.
+        /// </summary>
+        public Type Type { get; }
+
+        /// <summary>
+        /// Project module category.
+        /// </summary>
+        public ProjectModule.Category Category { get; }
+
+
+        public ProjectModuleAttribute(Type type, ProjectModule.Category category)
+        {
+            Type = type;
+            Category = Category;
+        }
     }
 }

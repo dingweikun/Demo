@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectModule.Properties {
+namespace Demo.Module.PrimaryInfo.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

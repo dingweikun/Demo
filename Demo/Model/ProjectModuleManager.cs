@@ -3,13 +3,16 @@ using Demo.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
+/*
 namespace Demo.Model
 {
+    
     public class ProjectModuleManager
     {
         // 定义一个静态变量来保存类的实例
@@ -53,16 +56,29 @@ namespace Demo.Model
         //=================================
 
 
-        private IReadOnlyCollection<IProjectModule> modules;
+        private List<IProjectModule> modules;
         public IReadOnlyCollection<IProjectModule> Modules => modules;
 
         private void InitModules()
         {
-            modules = new List<IProjectModule>
+            modules = new List<IProjectModule>();
+
+            var ass = Assembly.LoadFrom(@"ProjectModule\Module.PrimaryInfo.dll");
+            if(ass!=null)
             {
-                new Demo.Module.PrimaryInfoModule()
-            };
+                var l1 = from x in ass.ExportedTypes
+                         where x.GetCustomAttribute<ProjectModuleAttribute>() != null
+                         select x.GetCustomAttribute<ProjectModuleAttribute>();
+
+                foreach(var a in l1)
+                {
+                    modules.Add(a.Type.Assembly.CreateInstance(a.Type.FullName) as IProjectModule);
+                }
+
+            }
+
         }
     }
 
 }
+//*/
