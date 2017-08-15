@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mahapps="clr-namespace:MahApps.Metro;assembly=MahApps.Metro"
+             xmlns:control="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              lex:LocalizeDictionary.DesignCulture="en"
@@ -15,8 +16,6 @@
              >
     
     <UserControl.Resources>
-        <Thickness x:Key="ComboBoxMargin">0,6,0,24</Thickness>
-        <sys:Double x:Key="ComboBoxMinWidth">160</sys:Double>
         <converter:AccentToBrushConverter x:Key="AccentToBrushConverter"/>
     </UserControl.Resources>
 
@@ -27,8 +26,8 @@
             Text="{lex:Loc String_SettingsLanguage}"/>
 
         <ComboBox 
-            MinWidth="{StaticResource ComboBoxMinWidth}" 
-            Margin="{StaticResource ComboBoxMargin}"
+            MinWidth="160" 
+            Margin="0,12,0,24"
             HorizontalAlignment="Left"
             ItemsSource="{Binding AllLanguages}"
             SelectedItem="{Binding CurrentLanguage}"/>
@@ -37,12 +36,19 @@
             Style="{StaticResource HeadTextLevel3}" 
             Text="{lex:Loc String_SettingsTheme}"/>
 
-        <ComboBox 
+        <!--<ComboBox 
             MinWidth="{StaticResource ComboBoxMinWidth}" 
             Margin="{StaticResource ComboBoxMargin}" 
             HorizontalAlignment="Left"
             ItemsSource="{Binding AllThemes}"
-            SelectedItem="{Binding CurrentTheme}"/>
+            SelectedItem="{Binding CurrentTheme}"/>-->
+
+        <control:ToggleSwitch
+            Margin="0,12,0,24"
+            IsChecked="{Binding IsDarkTheme}"
+            OffLabel="{lex:Loc String_LightTheme}"
+            OnLabel="{lex:Loc String_DarkTheme}"
+            Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
 
         <TextBlock
             Style="{StaticResource HeadTextLevel3}"

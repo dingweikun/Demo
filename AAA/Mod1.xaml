@@ -1,0 +1,34 @@
+﻿<md:ProjectModule x:Class="AAA.Mod1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              lex:LocalizeDictionary.DesignCulture="en"
+             lex:ResxLocalizationProvider.DefaultAssembly="AAA"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+             xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:md="clr-namespace:Demo.Module;assembly=Demo.Module"
+             xmlns:local="clr-namespace:AAA"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            
+        <mahapps:MetroTabControl>
+            <TabItem Header="{lex:Loc String_CCC}">
+                    <mahapps:ToggleSwitchButton                     
+                    IsChecked="{Binding RelativeSource={RelativeSource AncestorType = local:Mod1}, Path=IsInEdit}">
+                        Switch
+                    </mahapps:ToggleSwitchButton> 
+            </TabItem>
+        </mahapps:MetroTabControl>
+            <ToggleButton 
+                Style="{StaticResource MetroToggleButton}"
+                >ttt</ToggleButton>
+            <!--MahApps.Metro.Styles.MetroToggleButton-->
+            <Button Click="Button_Click"> check</Button>
+            <mahapps:ToggleSwitch>tttt</mahapps:ToggleSwitch>
+        </StackPanel>
+    </Grid>
+</md:ProjectModule>

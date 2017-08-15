@@ -90,6 +90,10 @@
                 </DockPanel>
             </ScrollViewer>
         </Border>
+
+
+        <TabControl x:Name="RootTab" Grid.Column="1" Background="Gray"/>
+
     </Grid>
 
 </UserControl>

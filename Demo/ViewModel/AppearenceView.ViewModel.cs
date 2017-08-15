@@ -1,21 +1,18 @@
-using Demo.Model;
+using Demo.Manager;
 using GalaSoft.MvvmLight;
 using MahApps.Metro;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Windows;
-using WPFLocalizeExtension.Engine;
 
 namespace Demo.ViewModel
 {
     public class AppearenceViewViewModel : ViewModelBase
     {
-        public IEnumerable<Accent> AllAccents { get; }
-        public IEnumerable<ThemeInfo> AllThemes { get; }
-        public IEnumerable<LanguageInfo> AllLanguages { get; }
-
-
         private App App => Application.Current as App;
+
+        public IEnumerable<Accent> AllAccents => ThemeManager.Accents;
+
+        public IEnumerable<string> AllLanguages => LanguageManager.Languages;
 
         public Accent CurrentAccent
         {
@@ -25,58 +22,29 @@ namespace Demo.ViewModel
                 App.CurrentAccent = value;
                 RaisePropertyChanged(nameof(CurrentAccent));
             }
-            //get => ThemeManager.DetectAppStyle(Application.Current).Item2 as Accent;
-            //set
-            //{
-            //    var CurrentTheme = ThemeManager.DetectAppStyle(Application.Current).Item1 as AppTheme;
-            //    ThemeManager.ChangeAppStyle(Application.Current, value, CurrentTheme);
-            //    RaisePropertyChanged(nameof(CurrentAccent));
-            //}
         }
 
-        public ThemeInfo CurrentTheme
+        public bool IsDarkTheme
         {
-            get => ThemeInfo.FindTheme(App.CurrentTheme);
+            get => ThemeManager.GetAppTheme("BaseDark") == App.CurrentTheme;
             set
             {
-                App.CurrentTheme = value.Theme;
-                RaisePropertyChanged(nameof(CurrentTheme));
+                App.CurrentTheme = value ?
+                    ThemeManager.GetAppTheme("BaseDark") :
+                    ThemeManager.GetAppTheme("BaseLight");
             }
-            //get => ThemeInfo.FindTheme(ThemeManager.DetectAppStyle(Application.Current).Item1 as AppTheme);
-            //set
-            //{
-            //    var CurrentAccent = ThemeManager.DetectAppStyle(Application.Current).Item2 as Accent;
-            //    ThemeManager.ChangeAppStyle(Application.Current, CurrentAccent, value.Theme);
-            //    RaisePropertyChanged(nameof(CurrentTheme));
-            //}
+
         }
 
-
-        public LanguageInfo CurrentLanguage
+        public string CurrentLanguage
         {
-            get => LanguageInfo.FindLanguage(App.CurrentCulture);
+            get => LanguageManager.GetLanguage(App.CurrentCulture);
             set
             {
-                App.CurrentCulture = value.Culture;
+                App.CurrentCulture = LanguageManager.GetCulture(value);
                 RaisePropertyChanged(nameof(CurrentLanguage));
             }
-            //get => LanguageInfo.FindLanguage(LocalizeDictionary.Instance.Culture);
-            //set
-            //{
-            //    LocalizeDictionary.Instance.Culture = value.Culture;
-            //    RaisePropertyChanged(nameof(CurrentLanguage));
-            //}
         }
-
-
-        public AppearenceViewViewModel()
-        {
-            AllAccents = ThemeManager.Accents;
-            AllThemes = ThemeInfo.Themes;
-            AllLanguages = LanguageInfo.Languages;
-        }
-
-
 
     }
 }

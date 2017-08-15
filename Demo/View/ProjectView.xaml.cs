@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,17 @@ namespace Demo.View
         public ProjectView()
         {
             InitializeComponent();
+
+            //========================================
+
+            Assembly ass = Assembly.LoadFrom("AAA.dll");
+            var t = ass.GetType("AAA.Mod1");
+            var c = t.Assembly.CreateInstance(t.FullName) as UserControl;
+            TabItem item = new TabItem();
+            item.Header = "Extenal Module";
+            item.Content = c;
+            RootTab.Items.Add(item);
+
         }
     }
 }

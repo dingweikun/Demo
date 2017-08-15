@@ -7,10 +7,15 @@
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="CC"
              lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+             xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
             xmlns:local="clr-namespace:CC"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
     <Grid>
-        <TextBlock Text="{lex:Loc String_CCC}" FontSize="40"/>
+        <mahapps:MetroTabControl>
+            <TabItem Header="{lex:Loc String_CCC}">
+            </TabItem>
+        </mahapps:MetroTabControl>
     </Grid>
 </UserControl>

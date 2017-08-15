@@ -70,7 +70,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark Theme.
+        ///   Looks up a localized string similar to   Dark.
         /// </summary>
         internal static string String_DarkTheme {
             get {
@@ -142,7 +142,7 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light Theme.
+        ///   Looks up a localized string similar to   Light.
         /// </summary>
         internal static string String_LightTheme {
             get {

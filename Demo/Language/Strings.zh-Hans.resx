@@ -121,7 +121,7 @@
     <value>关于</value>
   </data>
   <data name="String_DarkTheme" xml:space="preserve">
-    <value>深色主题</value>
+    <value>  深色</value>
   </data>
   <data name="String_Demands" xml:space="preserve">
     <value>需求</value>
@@ -145,7 +145,7 @@
     <value>帮助</value>
   </data>
   <data name="String_LightTheme" xml:space="preserve">
-    <value>浅色主题</value>
+    <value>  浅色</value>
   </data>
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>测试框架</value>
