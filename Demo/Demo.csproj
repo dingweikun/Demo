@@ -106,6 +106,7 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="Manager\LanguageManager.cs" />
+    <Compile Include="Manager\ProjectModuleManager.cs" />
     <Compile Include="ViewModel\AppearenceView.ViewModel.cs" />
     <Compile Include="ViewModel\MainWindow.ViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -279,6 +280,10 @@
     <Resource Include="Images\VTabGroup.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Demo.Module\Demo.Module.csproj">
+      <Project>{48b5d25b-ee37-41bf-b063-d4544ac9768e}</Project>
+      <Name>Demo.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.UI\Demo.UI.csproj">
       <Project>{b253c1fb-4da5-415c-8c62-a2f7a3e53281}</Project>
       <Name>Demo.UI</Name>

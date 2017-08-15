@@ -15,6 +15,8 @@ namespace Demo.Module
         /// Project module category.
         /// </summary>
         public ProjectModule.Category Category { get; }
+
+
         public ProjectModuleAttribute(Type type, ProjectModule.Category category)
         {
             Type = type;

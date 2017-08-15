@@ -58,5 +58,26 @@ namespace Demo.Properties {
                 this["Culture"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ProjectModulePath {
+            get {
+                return ((string)(this["ProjectModulePath"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ProjectModuleAssembly {
+            get {
+                return ((string)(this["ProjectModuleAssembly"]));
+            }
+            set {
+                this["ProjectModuleAssembly"] = value;
+            }
+        }
     }
 }
