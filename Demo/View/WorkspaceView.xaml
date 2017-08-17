@@ -69,6 +69,7 @@
 
                                 <avalonDock:LayoutDocumentPane>
                                     <avalonDock:LayoutDocument Title="document1" ContentId="doc1">
+                                        <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
                                     </avalonDock:LayoutDocument>
                                     <avalonDock:LayoutDocument Title="document2" ContentId="doc2">
                                         <TextBox AcceptsReturn="True" TextWrapping="Wrap"></TextBox>

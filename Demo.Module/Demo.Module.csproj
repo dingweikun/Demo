@@ -50,6 +50,7 @@
     <Compile Include="IProjectModule.cs" />
     <Compile Include="ProjectModule.cs" />
     <Compile Include="ProjectModuleAttribute.cs" />
+    <Compile Include="ProjectModuleCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -3,18 +3,22 @@ using System.Windows.Controls;
 
 namespace Demo.Module
 {
+
     public abstract class ProjectModule : UserControl, IProjectModule
     {
         /// <summary>
         /// 工程模块分类
         /// </summary>
-        public enum Category
-        {
-            Information,
-            Resource,
-            Demand,
-            Support
-        }
+        //public enum ProjectModuleCategory
+        //{
+        //    Information,
+        //    Resource,
+        //    Demand,
+        //    Support
+        //}
+
+        public abstract ProjectModuleCategory Category { get; }
+
 
         #region ModuleTitle
         /// <summary>

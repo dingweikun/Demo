@@ -70,7 +70,7 @@ namespace Demo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Demo.Module.PrimaryInfo.dll;Demo.Module.WindResource.dll;")]
         public string ProjectModuleAssembly {
             get {
                 return ((string)(this["ProjectModuleAssembly"]));

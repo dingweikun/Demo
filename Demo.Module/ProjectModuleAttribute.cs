@@ -14,10 +14,10 @@ namespace Demo.Module
         /// <summary>
         /// Project module category.
         /// </summary>
-        public ProjectModule.Category Category { get; }
+        public ProjectModuleCategory Category { get; }
 
 
-        public ProjectModuleAttribute(Type type, ProjectModule.Category category)
+        public ProjectModuleAttribute(Type type, ProjectModuleCategory category)
         {
             Type = type;
             Category = Category;

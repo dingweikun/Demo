@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"      
              xmlns:local="clr-namespace:Demo.View"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              lex:LocalizeDictionary.DesignCulture="en"
              lex:ResxLocalizationProvider.DefaultAssembly="Demo"
              lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+             xmlns:md="clr-namespace:Demo.Module;assembly=Demo.Module"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             DataContext="{Binding ProjectView, Source={StaticResource ViewModelLocator}}"                     
+             >
 
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/Demo;component/ResDict/ProjectView.ResDict.xaml" />
@@ -22,77 +25,146 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="{DynamicResource SemiTransparentGreyBrush}" BorderThickness="1">
+        <Border Background="{DynamicResource SemiTransparentGreyBrush}"
+                BorderBrush="{DynamicResource SemiTransparentGreyBrush}" 
+                BorderThickness="1" 
+                >
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <DockPanel MinWidth="240">
-                    <Expander BorderThickness="0,0,0,0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1">
+                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
+                    <Expander>
                         <Expander.Header>
                             <DockPanel>
                                 <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                                <TextBlock Text="{lex:Loc String_ProjectInfo}" 
-                                   Style="{StaticResource HeadTextStyleKey}"/>
+                                <TextBlock Text="{lex:Loc String_ProjectInfo}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <StackPanel Orientation="Vertical">
+                        <!--<StackPanel Orientation="Vertical">
                             <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_GeographicInfo}" VerticalAlignment="Stretch" />
-                        </StackPanel>
+                        </StackPanel>-->
+                        <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
+                                 ItemTemplate="{StaticResource ListboxItemTamplateKey}"
+                                 ItemsSource="{Binding InfoModules, Mode=OneWay}"
+                                 SelectedValue="{Binding ElementName=RootTab, Path=SelectedValue, Mode=TwoWay}"/>
                     </Expander>
 
 
-                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1">
+                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
+                    <Expander>
                         <Expander.Header>
                             <DockPanel>
                                 <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                                <TextBlock Text="{lex:Loc String_Resources}" 
-                                   Style="{StaticResource HeadTextStyleKey}"/>
+                                <TextBlock Text="{lex:Loc String_Resources}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <StackPanel Orientation="Vertical">
+                        <!--<StackPanel Orientation="Vertical">
                             <Button Content="{lex:Loc String_WindResources}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_SolarResources}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_GeothermalResources}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_WaterResources}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_FossilFuelsResources}" VerticalAlignment="Stretch" />
-                        </StackPanel>
+                        </StackPanel>-->
+                        <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
+                                 ItemTemplate="{StaticResource ListboxItemTamplateKey}"
+                                 ItemsSource="{Binding ResourceModules, Mode=OneWay}"
+                                 SelectedValue="{Binding ElementName=RootTab, Path=SelectedValue, Mode=TwoWay}"/>
                     </Expander>
 
 
-                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1">
+                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">
                         <Expander.Header>
                             <DockPanel>
                                 <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                                <TextBlock Text="{lex:Loc String_Demands}" 
-                                   Style="{StaticResource HeadTextStyleKey}"/>
+                                <TextBlock Text="{lex:Loc String_Demands}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <StackPanel Orientation="Vertical">
+                        <!--<StackPanel Orientation="Vertical">
                             <Button Content="{lex:Loc String_PowerDemands}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_ThermalDemands}" VerticalAlignment="Stretch" />
                             <Button Content="{lex:Loc String_OtherDemands}" VerticalAlignment="Stretch" />
-                        </StackPanel>
+                        </StackPanel>-->
+                        <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
+                                 ItemTemplate="{StaticResource ListboxItemTamplateKey}"
+                                 ItemsSource="{Binding DemandModules, Mode=OneWay}"
+                                 SelectedValue="{Binding ElementName=RootTab, Path=SelectedValue, Mode=TwoWay}"/>
                     </Expander>
 
 
-                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1">
+                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">
                         <Expander.Header>
                             <DockPanel>
                                 <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
-                                <TextBlock Text="{lex:Loc String_Supporting}" 
-                                   Style="{StaticResource HeadTextStyleKey}"/>
+                                <TextBlock Text="{lex:Loc String_Supporting}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <StackPanel Orientation="Vertical">
+                        <!--<StackPanel Orientation="Vertical">
                             <Button Content="{lex:Loc String_PolicySupporting}" VerticalAlignment="Stretch" />
-                        </StackPanel>
+                        </StackPanel>-->
+                        <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
+                                 ItemTemplate="{StaticResource ListboxItemTamplateKey}"
+                                 ItemsSource="{Binding SupportModules, Mode=OneWay}"
+                                 SelectedValue="{Binding ElementName=RootTab, Path=SelectedValue, Mode=TwoWay}"/>
                     </Expander>
 
                 </DockPanel>
             </ScrollViewer>
         </Border>
 
+        
+        
+        
+        <DockPanel Grid.Column="1" Margin="12,0">
+            <Border BorderThickness="0,0,0,3"  DockPanel.Dock="Top"
+                    BorderBrush="{DynamicResource AccentColorBrush}">
 
-        <TabControl x:Name="RootTab" Grid.Column="1" Background="Gray"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Style="{StaticResource HeadTextLevel2}">
+                        <TextBlock.Inlines>
+                            <Run Text="{lex:Loc String_ProjectInfo}"/>
+                            <Run Text=">>"/>
+                            <Run Text="{lex:Loc String_ProjectInfo}"/>
+                            <Run>ddddd</Run>
+                            <Run>ddddd</Run>
+                        </TextBlock.Inlines>
+                    </TextBlock>
+
+
+                    <StackPanel x:Name="ModuleEditButtonPanel"
+                    Orientation="Horizontal" Grid.Column="1">
+                        <Button >OK</Button>
+                        <Button >Cancel</Button>
+                    </StackPanel>
+
+                    <StackPanel x:Name="ModuleCommandButtonPanel"
+                    Orientation="Horizontal" Grid.Column="1">
+                        <Button>Edit</Button>
+                        <Button>Delete</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Button Click="Button_Click"   DockPanel.Dock="Bottom">
+                <Ellipse Width="10" Height="10" Fill="Red"/>
+            </Button>
+
+            <TextBlock Text="{Binding ElementName=RootTab,Path=SelectedIndex}" DockPanel.Dock="Bottom"/>
+            <TextBlock Text="{Binding ElementName=RootTab,Path=Items.Count}" DockPanel.Dock="Bottom"/>
+
+
+            <TabControl x:Name="RootTab"
+                        ItemsSource="{Binding ProjectModules}">
+            </TabControl>
+
+        </DockPanel>
+
+        
+        
 
     </Grid>
 

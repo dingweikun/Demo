@@ -55,7 +55,8 @@ namespace Demo.Manager
                 try
                 {
                     // 加载模块程序集
-                    assembly = Assembly.LoadFrom(path + '\\' + file.Trim());
+                    //assembly = Assembly.LoadFrom(path + '\\' + file.Trim());
+                    assembly = Assembly.LoadFrom(file.Trim());
                 }
                 catch (System.Exception e)
                 {
