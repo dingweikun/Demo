@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Demo.Manager
 {
@@ -56,6 +57,7 @@ namespace Demo.Manager
                 {
                     // 加载模块程序集
                     //assembly = Assembly.LoadFrom(path + '\\' + file.Trim());
+                    //MessageBox.Show(file.Trim());
                     assembly = Assembly.LoadFrom(file.Trim());
                 }
                 catch (System.Exception e)

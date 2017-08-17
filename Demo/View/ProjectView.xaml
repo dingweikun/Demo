@@ -72,7 +72,8 @@
                     </Expander>
 
 
-                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">
+                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
+                    <Expander>
                         <Expander.Header>
                             <DockPanel>
                                 <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
@@ -91,7 +92,8 @@
                     </Expander>
 
 
-                    <Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">
+                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
+                    <Expander>
                         <Expander.Header>
                             <DockPanel>
                                 <Button DockPanel.Dock="Right" Style="{StaticResource AddIconButtonStyle}"/>
