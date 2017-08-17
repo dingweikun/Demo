@@ -37,6 +37,7 @@ namespace Demo.ViewModel
         public IEnumerable<ProjectModule> ResourceModules => SelectModulesByCategory(ProjectModuleCategory.Resource);
         public IEnumerable<ProjectModule> DemandModules => SelectModulesByCategory(ProjectModuleCategory.Demand);
         public IEnumerable<ProjectModule> SupportModules => SelectModulesByCategory(ProjectModuleCategory.Support);
+        public bool HasModuleLoaded => projectModules.Count > 0;
 
         private IEnumerable<ProjectModule> SelectModulesByCategory(ProjectModuleCategory category)
             => from module in projectModules
@@ -57,6 +58,7 @@ namespace Demo.ViewModel
             RaisePropertyChanged(nameof(ResourceModules));
             RaisePropertyChanged(nameof(DemandModules));
             RaisePropertyChanged(nameof(SupportModules));
+            RaisePropertyChanged(nameof(HasModuleLoaded));
         }
 
 

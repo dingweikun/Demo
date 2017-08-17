@@ -9,7 +9,7 @@
 
     <PathGeometry x:Key="DotsVerticalPathKey">
         M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 
-            12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z
+        12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z
     </PathGeometry>
 
     <PathGeometry x:Key="DoubleUpPathKey">
@@ -27,6 +27,7 @@
         18.97,3.28L17.13,5.13L20.88,8.88L22.72,7.03C23.11,6.64 23.11,6 22.72,5.63L20.38,3.28C20.18,3.09 19.91,3 
         19.66,3M16.06,6.19L5,17.25V21H8.75L19.81,9.94L16.06,6.19Z
     </PathGeometry>
+
 
     <!-- Expander Header Text Style-->
     <Style x:Key="HeadTextStyleKey" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MetroTextBlock}">
@@ -127,7 +128,33 @@
         <Setter Property="IsExpanded" Value="True" />
     </Style>
 
+    <!--Listbox ItemTemplate in Expander-->
+    <DataTemplate x:Key="ListboxItemTamplateKey" DataType="{x:Type md:ProjectModule}">
+        <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SemiTransparentGreyBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="txt" Margin="20,10,0,10"
+                           Text="{Binding ModuleTitle, Mode=OneWay}"
+                           FontSize="14"/>
 
+                <Path x:Name="EditFlag" Visibility="Hidden"
+                      Data="{StaticResource EditFlagPathKey}" Width="20" Height="14" Stretch="Uniform" 
+                      Grid.Column="1" Margin="10,0,30,0"
+                      Fill="{DynamicResource GrayBrush1}"/>
+            </Grid>
+        </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsInEdit}" Value="True">
+                <Setter Property="Visibility" Value="Visible" TargetName="EditFlag"/>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+
+    <!--Listbox ListBoxItemStyle -->
     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MetroListBoxItem}">
         <Setter Property="Template">
             <Setter.Value>
@@ -147,10 +174,11 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentColorBrush3}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentColorBrush4}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentColorBrush4}" />
+                            <Setter Property="Foreground" Value="{DynamicResource AccentSelectedColorBrush}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentColorBrush3}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource GrayBrush7}" />
@@ -162,7 +190,6 @@
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="{DynamicResource AccentSelectedColorBrush}" />
                             <Setter TargetName="Border" Property="Background" Value="{DynamicResource GrayBrush7}" />
-                            <Setter TargetName="Border" Property="Background" Value="Yellow" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -170,29 +197,27 @@
         </Setter>
     </Style>
 
-    <!--Listbox ItemTemplate in Expander-->
-    <DataTemplate x:Key="ListboxItemTamplateKey" DataType="{x:Type md:ProjectModule}">
-        <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SemiTransparentGreyBrush}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock x:Name="txt" Margin="20,10,0,10"
-                           Text="{Binding ModuleTitle, Mode=OneWay}"
-                           FontSize="14"/>
 
-                <Path x:Name="EditFlag" Visibility="Hidden"
-                      Data="{StaticResource EditFlagPathKey}" Width="12" Height="12" Stretch="Uniform" 
-                      Grid.Column="1" Margin="10,0,30,0"
-                      Fill="{Binding ElementName=txt, Path=Foreground}"/>
-            </Grid>
-        </Border>
-        <DataTemplate.Triggers>
-            <DataTrigger Binding="{Binding IsInEdit}" Value="True">
-                <Setter Property="Visibility" Value="Visible" TargetName="EditFlag"/>
-            </DataTrigger>
-        </DataTemplate.Triggers>
-    </DataTemplate>
+    <Style x:Key="BarButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource AccentFlatButtonStyle}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <ContentPresenter Margin="5"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
 
 </ResourceDictionary>

@@ -117,14 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ProjectModuleCategory_Demand" xml:space="preserve">
+    <value>Demand</value>
+  </data>
+  <data name="ProjectModuleCategory_Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="ProjectModuleCategory_Resource" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="ProjectModuleCategory_Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
   <data name="String_About" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="String_Cancel" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="String_DarkTheme" xml:space="preserve">
     <value>  Dark</value>
   </data>
   <data name="String_Demands" xml:space="preserve">
     <value>Demands</value>
+  </data>
+  <data name="String_EditModule" xml:space="preserve">
+    <value>Edit Module</value>
   </data>
   <data name="String_Evaluation" xml:space="preserve">
     <value> Evaluation </value>
@@ -144,11 +162,26 @@
   <data name="String_Help" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="String_InEdit" xml:space="preserve">
+    <value>( In Edit ... )</value>
+  </data>
   <data name="String_LightTheme" xml:space="preserve">
     <value>  Light</value>
   </data>
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>Demo</value>
+  </data>
+  <data name="String_ModuleEditCancel" xml:space="preserve">
+    <value>Canel</value>
+  </data>
+  <data name="String_ModuleEditFinish" xml:space="preserve">
+    <value>Accomplish</value>
+  </data>
+  <data name="String_ModuleEditRecover" xml:space="preserve">
+    <value>Recover Saved Data</value>
+  </data>
+  <data name="String_ModuleEditSave" xml:space="preserve">
+    <value>Save Data</value>
   </data>
   <data name="String_NewProject" xml:space="preserve">
     <value>New Project</value>
@@ -182,6 +215,9 @@
   </data>
   <data name="String_ProjectInfo" xml:space="preserve">
     <value>Information</value>
+  </data>
+  <data name="String_RemoveModule" xml:space="preserve">
+    <value>Remove Module</value>
   </data>
   <data name="String_Resources" xml:space="preserve">
     <value>Resources</value>

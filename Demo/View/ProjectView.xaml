@@ -25,13 +25,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Background="{DynamicResource SemiTransparentGreyBrush}"
-                BorderBrush="{DynamicResource SemiTransparentGreyBrush}" 
+        <!-- ============================= Left side selector list ============================= -->
+
+        <Border BorderBrush="{DynamicResource SemiTransparentGreyBrush}" 
                 BorderThickness="1" 
                 >
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <DockPanel MinWidth="240">
-                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
                     <Expander>
                         <Expander.Header>
                             <DockPanel>
@@ -39,10 +39,6 @@
                                 <TextBlock Text="{lex:Loc String_ProjectInfo}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <!--<StackPanel Orientation="Vertical">
-                            <Button Content="{lex:Loc String_PrimaryInfo}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_GeographicInfo}" VerticalAlignment="Stretch" />
-                        </StackPanel>-->
                         <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
                                  ItemTemplate="{StaticResource ListboxItemTamplateKey}"
                                  ItemsSource="{Binding InfoModules, Mode=OneWay}"
@@ -50,7 +46,6 @@
                     </Expander>
 
 
-                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
                     <Expander>
                         <Expander.Header>
                             <DockPanel>
@@ -58,13 +53,6 @@
                                 <TextBlock Text="{lex:Loc String_Resources}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <!--<StackPanel Orientation="Vertical">
-                            <Button Content="{lex:Loc String_WindResources}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_SolarResources}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_GeothermalResources}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_WaterResources}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_FossilFuelsResources}" VerticalAlignment="Stretch" />
-                        </StackPanel>-->
                         <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
                                  ItemTemplate="{StaticResource ListboxItemTamplateKey}"
                                  ItemsSource="{Binding ResourceModules, Mode=OneWay}"
@@ -72,7 +60,6 @@
                     </Expander>
 
 
-                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
                     <Expander>
                         <Expander.Header>
                             <DockPanel>
@@ -80,11 +67,6 @@
                                 <TextBlock Text="{lex:Loc String_Demands}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <!--<StackPanel Orientation="Vertical">
-                            <Button Content="{lex:Loc String_PowerDemands}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_ThermalDemands}" VerticalAlignment="Stretch" />
-                            <Button Content="{lex:Loc String_OtherDemands}" VerticalAlignment="Stretch" />
-                        </StackPanel>-->
                         <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
                                  ItemTemplate="{StaticResource ListboxItemTamplateKey}"
                                  ItemsSource="{Binding DemandModules, Mode=OneWay}"
@@ -92,7 +74,6 @@
                     </Expander>
 
 
-                    <!--<Expander BorderThickness="0" DockPanel.Dock="Top" Padding="0" Margin="0,0,0,1" IsExpanded="True">-->
                     <Expander>
                         <Expander.Header>
                             <DockPanel>
@@ -100,9 +81,6 @@
                                 <TextBlock Text="{lex:Loc String_Supporting}" Style="{StaticResource HeadTextStyleKey}"/>
                             </DockPanel>
                         </Expander.Header>
-                        <!--<StackPanel Orientation="Vertical">
-                            <Button Content="{lex:Loc String_PolicySupporting}" VerticalAlignment="Stretch" />
-                        </StackPanel>-->
                         <ListBox MinHeight="20" Background="{DynamicResource SemiTransparentGreyBrush}"
                                  ItemTemplate="{StaticResource ListboxItemTamplateKey}"
                                  ItemsSource="{Binding SupportModules, Mode=OneWay}"
@@ -113,60 +91,111 @@
             </ScrollViewer>
         </Border>
 
-        
-        
-        
-        <DockPanel Grid.Column="1" Margin="12,0">
-            <Border BorderThickness="0,0,0,3"  DockPanel.Dock="Top"
-                    BorderBrush="{DynamicResource AccentColorBrush}">
+        <!-- ============================= Right side module space ============================= -->
 
+        <StackPanel Grid.Column="1" Margin="12,0">
+            <!--mahapps:VisibilityHelper.IsVisible="{Binding HasModuleLoaded, Mode=OneWay}">-->
+
+            <!-- Top Title Bar -->
+            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource SeperatorBrush}">
                 <Grid>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Style="{StaticResource HeadTextLevel2}">
+                    <!-- Title String-->
+                    <lex:LocProxy x:Name="Proxy" PrependType="True" 
+                                      Source="{Binding ElementName=RootTab, Path=SelectedValue.Category, Mode=OneWay}" />
+                    <TextBlock Grid.Column="0" Style="{StaticResource HeadTextLevel3}">
                         <TextBlock.Inlines>
-                            <Run Text="{lex:Loc String_ProjectInfo}"/>
-                            <Run Text=">>"/>
-                            <Run Text="{lex:Loc String_ProjectInfo}"/>
-                            <Run>ddddd</Run>
-                            <Run>ddddd</Run>
+                            <Run Text="{Binding Result, ElementName=Proxy, Mode=OneWay}"/>
+                            <Run Text=">"/>
+                            <Run Text="{Binding ElementName=RootTab, Path=SelectedValue.ModuleTitle, Mode=OneWay}"/>
                         </TextBlock.Inlines>
                     </TextBlock>
 
+                    <!-- Edit State String-->
+                    <TextBlock Grid.Column="1" Style="{StaticResource HeadTextLevel3}" Margin="20,0"
+                                   Text="{lex:Loc String_InEdit}" 
+                                   mahapps:VisibilityHelper.IsVisible="{Binding ElementName=RootTab, Path=SelectedValue.IsInEdit, Mode=OneWay}"/>
 
-                    <StackPanel x:Name="ModuleEditButtonPanel"
-                    Orientation="Horizontal" Grid.Column="1">
-                        <Button >OK</Button>
-                        <Button >Cancel</Button>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="2" 
+                                mahapps:VisibilityHelper.IsVisible="{Binding ElementName=RootTab, Path=SelectedValue.IsInEdit, Mode=OneWay}">
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Path
+                                Data="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"
+                                Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center"
+                                Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
+                                <TextBlock Margin="8,0,0,0" Text="{lex:Loc String_ModuleEditSave}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Path
+                                Data="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z"
+                                Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center"
+                                Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
+                                <TextBlock Margin="8,0,0,0" Text="{lex:Loc String_ModuleEditRecover}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Path
+                                Data="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z"
+                                Width="14" Height="10" Stretch="Uniform" VerticalAlignment="Center"
+                                Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
+                                <TextBlock Margin="8,0,0,0" Text="{lex:Loc String_ModuleEditCancel}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Path
+                                Data="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" 
+                                Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center"
+                                Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
+                                <TextBlock Margin="8,0,0,0" Text="{lex:Loc String_ModuleEditFinish}"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
 
-                    <StackPanel x:Name="ModuleCommandButtonPanel"
-                    Orientation="Horizontal" Grid.Column="1">
-                        <Button>Edit</Button>
-                        <Button>Delete</Button>
+                    <StackPanel Orientation="Horizontal" Grid.Column="3"
+                                mahapps:VisibilityHelper.IsCollapsed="{Binding ElementName=RootTab, Path=SelectedValue.IsInEdit, Mode=OneWay}">
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Path
+                                Data="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"
+                                Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center"
+                                Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
+                                <TextBlock Margin="8,0,0,0" Text="{lex:Loc String_EditModule}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Path
+                                Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" 
+                                Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center"
+                                Fill="{Binding RelativeSource={RelativeSource AncestorType=ButtonBase}, Path=Foreground}"/>
+                                <TextBlock Margin="8,0,0,0" Text="{lex:Loc String_RemoveModule}"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Border>
-
-            <Button Click="Button_Click"   DockPanel.Dock="Bottom">
-                <Ellipse Width="10" Height="10" Fill="Red"/>
-            </Button>
-
-            <TextBlock Text="{Binding ElementName=RootTab,Path=SelectedIndex}" DockPanel.Dock="Bottom"/>
-            <TextBlock Text="{Binding ElementName=RootTab,Path=Items.Count}" DockPanel.Dock="Bottom"/>
-
 
             <TabControl x:Name="RootTab"
                         ItemsSource="{Binding ProjectModules}">
             </TabControl>
 
-        </DockPanel>
+        </StackPanel>
 
-        
-        
+        <Button Click="Button_Click" VerticalAlignment="Bottom">
+            <Ellipse Width="10" Height="10" Fill="Red"/>
+        </Button>
 
     </Grid>
 

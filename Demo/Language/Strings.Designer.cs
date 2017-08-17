@@ -61,11 +61,56 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Demand.
+        /// </summary>
+        internal static string ProjectModuleCategory_Demand {
+            get {
+                return ResourceManager.GetString("ProjectModuleCategory_Demand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string ProjectModuleCategory_Information {
+            get {
+                return ResourceManager.GetString("ProjectModuleCategory_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resource.
+        /// </summary>
+        internal static string ProjectModuleCategory_Resource {
+            get {
+                return ResourceManager.GetString("ProjectModuleCategory_Resource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        internal static string ProjectModuleCategory_Support {
+            get {
+                return ResourceManager.GetString("ProjectModuleCategory_Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string String_About {
             get {
                 return ResourceManager.GetString("String_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string String_Cancel {
+            get {
+                return ResourceManager.GetString("String_Cancel", resourceCulture);
             }
         }
         
@@ -84,6 +129,15 @@ namespace Demo.Language {
         internal static string String_Demands {
             get {
                 return ResourceManager.GetString("String_Demands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Module.
+        /// </summary>
+        internal static string String_EditModule {
+            get {
+                return ResourceManager.GetString("String_EditModule", resourceCulture);
             }
         }
         
@@ -142,6 +196,15 @@ namespace Demo.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ( In Edit ... ).
+        /// </summary>
+        internal static string String_InEdit {
+            get {
+                return ResourceManager.GetString("String_InEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   Light.
         /// </summary>
         internal static string String_LightTheme {
@@ -156,6 +219,42 @@ namespace Demo.Language {
         internal static string String_MainWindowTitle {
             get {
                 return ResourceManager.GetString("String_MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canel.
+        /// </summary>
+        internal static string String_ModuleEditCancel {
+            get {
+                return ResourceManager.GetString("String_ModuleEditCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accomplish.
+        /// </summary>
+        internal static string String_ModuleEditFinish {
+            get {
+                return ResourceManager.GetString("String_ModuleEditFinish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recover Saved Data.
+        /// </summary>
+        internal static string String_ModuleEditRecover {
+            get {
+                return ResourceManager.GetString("String_ModuleEditRecover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Data.
+        /// </summary>
+        internal static string String_ModuleEditSave {
+            get {
+                return ResourceManager.GetString("String_ModuleEditSave", resourceCulture);
             }
         }
         
@@ -255,6 +354,15 @@ namespace Demo.Language {
         internal static string String_ProjectInfo {
             get {
                 return ResourceManager.GetString("String_ProjectInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Module.
+        /// </summary>
+        internal static string String_RemoveModule {
+            get {
+                return ResourceManager.GetString("String_RemoveModule", resourceCulture);
             }
         }
         

@@ -117,14 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ProjectModuleCategory_Demand" xml:space="preserve">
+    <value>需求</value>
+  </data>
+  <data name="ProjectModuleCategory_Information" xml:space="preserve">
+    <value>项目信息</value>
+  </data>
+  <data name="ProjectModuleCategory_Resource" xml:space="preserve">
+    <value>资源</value>
+  </data>
+  <data name="ProjectModuleCategory_Support" xml:space="preserve">
+    <value>配套</value>
+  </data>
   <data name="String_About" xml:space="preserve">
     <value>关于</value>
+  </data>
+  <data name="String_Cancel" xml:space="preserve">
+    <value>取消</value>
   </data>
   <data name="String_DarkTheme" xml:space="preserve">
     <value>  深色</value>
   </data>
   <data name="String_Demands" xml:space="preserve">
     <value>需求</value>
+  </data>
+  <data name="String_EditModule" xml:space="preserve">
+    <value>编辑模块</value>
   </data>
   <data name="String_Evaluation" xml:space="preserve">
     <value> 评估 </value>
@@ -144,11 +162,26 @@
   <data name="String_Help" xml:space="preserve">
     <value>帮助</value>
   </data>
+  <data name="String_InEdit" xml:space="preserve">
+    <value>( 编辑中 ... )</value>
+  </data>
   <data name="String_LightTheme" xml:space="preserve">
     <value>  浅色</value>
   </data>
   <data name="String_MainWindowTitle" xml:space="preserve">
     <value>测试框架</value>
+  </data>
+  <data name="String_ModuleEditCancel" xml:space="preserve">
+    <value>取消编辑</value>
+  </data>
+  <data name="String_ModuleEditFinish" xml:space="preserve">
+    <value>完成编辑</value>
+  </data>
+  <data name="String_ModuleEditRecover" xml:space="preserve">
+    <value>恢复模块数据</value>
+  </data>
+  <data name="String_ModuleEditSave" xml:space="preserve">
+    <value>保存模块数据</value>
   </data>
   <data name="String_NewProject" xml:space="preserve">
     <value>新建项目</value>
@@ -182,6 +215,9 @@
   </data>
   <data name="String_ProjectInfo" xml:space="preserve">
     <value>项目信息</value>
+  </data>
+  <data name="String_RemoveModule" xml:space="preserve">
+    <value>移除模块</value>
   </data>
   <data name="String_Resources" xml:space="preserve">
     <value>资源</value>
