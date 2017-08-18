@@ -174,11 +174,11 @@
   <data name="String_ModuleEditCancel" xml:space="preserve">
     <value>Canel</value>
   </data>
-  <data name="String_ModuleEditFinish" xml:space="preserve">
-    <value>Accomplish</value>
+  <data name="String_ModuleEditComplete" xml:space="preserve">
+    <value>Complete</value>
   </data>
-  <data name="String_ModuleEditRecover" xml:space="preserve">
-    <value>Recover Saved Data</value>
+  <data name="String_ModuleEditReload" xml:space="preserve">
+    <value>Reload Saved Data</value>
   </data>
   <data name="String_ModuleEditSave" xml:space="preserve">
     <value>Save Data</value>
@@ -221,6 +221,9 @@
   </data>
   <data name="String_Resources" xml:space="preserve">
     <value>Resources</value>
+  </data>
+  <data name="String_SelectProjectModule" xml:space="preserve">
+    <value>Select Project Modules</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>Settings</value>

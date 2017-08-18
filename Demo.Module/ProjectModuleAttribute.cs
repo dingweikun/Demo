@@ -3,7 +3,7 @@ using System;
 
 namespace Demo.Module
 {
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class ProjectModuleAttribute : Attribute
     {
         /// <summary>
@@ -20,7 +20,13 @@ namespace Demo.Module
         public ProjectModuleAttribute(Type type, ProjectModuleCategory category)
         {
             Type = type;
-            Category = Category;
+            Category = category;
+        }
+
+
+        public override string ToString()
+        {
+            return Type.ToString() + "[" + Category.ToString() + "]";
         }
     }
 }

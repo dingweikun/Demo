@@ -46,15 +46,15 @@ namespace Demo.ViewModel
             SimpleIoc.Default.Register<StartViewViewModel>();
             SimpleIoc.Default.Register<AppearenceViewViewModel>();
             SimpleIoc.Default.Register<ProjectViewViewModel>();
+            SimpleIoc.Default.Register<ProjectModuleSelectWindowViewModel>();
         }
 
         public MainWindowViewModel MainWindow => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public StartViewViewModel StartView => ServiceLocator.Current.GetInstance<StartViewViewModel>();
         public AppearenceViewViewModel AppearenceView => ServiceLocator.Current.GetInstance<AppearenceViewViewModel>();
         public ProjectViewViewModel ProjectView => ServiceLocator.Current.GetInstance<ProjectViewViewModel>();
-
-
-
+        public ProjectModuleSelectWindowViewModel ProjectModuleSelectWindow => ServiceLocator.Current.GetInstance<ProjectModuleSelectWindowViewModel>();
+        
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

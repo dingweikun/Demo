@@ -15,7 +15,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ProjectModuleAssembly" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Demo.Module.PrimaryInfo.dll;Demo.Module.WindResource.dll;ProjectModule.Demand.Power.dll</Value>
+      <Value Profile="(Default)">ProjectModule.Demand.Power.dll</Value>
     </Setting>
   </Settings>
 </SettingsFile>

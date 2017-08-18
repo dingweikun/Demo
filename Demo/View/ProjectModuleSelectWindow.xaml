@@ -1,0 +1,91 @@
+﻿<mahapps:MetroWindow x:Class="Demo.View.ProjectModuleSelectWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:vm="clr-namespace:Demo.ViewModel"
+    xmlns:mng="clr-namespace:Demo.Manager"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="Demo"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+    mc:Ignorable="d"
+    Style="{StaticResource ResizeMetroWindowStyle}" 
+    Title="{lex:Loc String_SelectProjectModule}" 
+    Height="500" Width="450"                 
+    WindowStartupLocation="CenterOwner"
+    DataContext="{Binding ProjectModuleSelectWindow, Source={StaticResource ViewModelLocator}}"                     
+    >
+
+    <mahapps:MetroWindow.WindowButtonCommands>
+        <mahapps:WindowButtonCommands Template="{StaticResource MahApps.Metro.Templates.WindowButtonCommands.Win10}"/>
+    </mahapps:MetroWindow.WindowButtonCommands>
+
+
+    <DockPanel Margin="20" >
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button IsDefault="True" HorizontalAlignment="Right" 
+                    Width="100"
+                    Content="{lex:Loc String_OK}"/>
+            <Button IsCancel="True" HorizontalAlignment="Right"                     
+                    Width="100" Margin="4,0"
+                    Content="{lex:Loc String_Cancel}"/>
+        </StackPanel>
+
+        <TabControl mahapps:TabControlHelper.Underlined="SelectedTabItem" Margin="0,0,0,10">
+            <TabItem Header="{lex:Loc String_ProjectInfo}"
+                     FontFamily="{StaticResource HeaderFontFamily}"
+                     mahapps:ControlsHelper.HeaderFontSize="16">
+                <ListBox BorderThickness="0,0,0,1" 
+                         BorderBrush="{DynamicResource SemiTransparentGreyBrush}"
+                         ItemsSource="{x:Static mng:ProjectModuleManager.InfoModuleAttributes}"
+                         >
+                    
+                    <!--<ListBox.ItemTemplate>
+                        <DataTemplate DataType="vm:ProjectModuleSelectWapper">
+                            <CheckBox IsChecked="{Binding IsSelected}"/>
+                            --><!--IsChecked="{Binding IsSelected}"-->
+                                      <!--Content="{Binding Module.ModuleTitle}"/>--><!--
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>-->
+
+                </ListBox>
+            </TabItem>
+
+            <TabItem Header="{lex:Loc String_Resources}"                   
+                     FontFamily="{StaticResource HeaderFontFamily}"
+                     mahapps:ControlsHelper.HeaderFontSize="16">
+                <ListBox BorderThickness="0,0,0,1" 
+                    BorderBrush="{DynamicResource SemiTransparentGreyBrush}">
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                </ListBox>
+            </TabItem>
+            <TabItem Header="{lex:Loc String_Demands}"                    
+                     FontFamily="{StaticResource HeaderFontFamily}"
+                     mahapps:ControlsHelper.HeaderFontSize="16">
+                <ListBox BorderThickness="0,0,0,1" 
+                    BorderBrush="{DynamicResource SemiTransparentGreyBrush}">
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                    <CheckBox>otpomsfa</CheckBox>
+                </ListBox>
+            </TabItem>
+            <TabItem Header="{lex:Loc String_Supporting}"                  
+                     FontFamily="{StaticResource HeaderFontFamily}"
+                     mahapps:ControlsHelper.HeaderFontSize="16">
+                <ListBox BorderThickness="0,0,0,1" 
+                    BorderBrush="{DynamicResource SemiTransparentGreyBrush}">
+                    <CheckBox>otpomsfa</CheckBox>
+                </ListBox>
+            </TabItem>
+        </TabControl>
+
+    </DockPanel>
+
+</mahapps:MetroWindow>

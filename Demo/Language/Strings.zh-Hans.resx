@@ -174,10 +174,10 @@
   <data name="String_ModuleEditCancel" xml:space="preserve">
     <value>取消编辑</value>
   </data>
-  <data name="String_ModuleEditFinish" xml:space="preserve">
+  <data name="String_ModuleEditComplete" xml:space="preserve">
     <value>完成编辑</value>
   </data>
-  <data name="String_ModuleEditRecover" xml:space="preserve">
+  <data name="String_ModuleEditReload" xml:space="preserve">
     <value>恢复模块数据</value>
   </data>
   <data name="String_ModuleEditSave" xml:space="preserve">
@@ -221,6 +221,9 @@
   </data>
   <data name="String_Resources" xml:space="preserve">
     <value>资源</value>
+  </data>
+  <data name="String_SelectProjectModule" xml:space="preserve">
+    <value>选择工程模块</value>
   </data>
   <data name="String_Settings" xml:space="preserve">
     <value>设置</value>

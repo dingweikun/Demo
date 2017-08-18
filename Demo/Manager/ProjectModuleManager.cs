@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Demo.Manager
 {
+    /// <summary>
+    /// 程序加载模块的管理类
+    /// </summary>
     internal static class ProjectModuleManager
     {
         // 存储模块的内部字典
@@ -35,9 +35,34 @@ namespace Demo.Manager
                 return list;
             }
         }
-        
-         // 构造函数，加载模块
-         static ProjectModuleManager() => ReloadModules();
+
+        /// <summary>
+        /// 已加载模块的特性列表, 特性（ProjectModuleAttribute）可用来通过 GetModule 方法获取模块实例
+        /// </summary>
+        public static IEnumerable<ProjectModuleAttribute> ModuleAttributes => modDict.Keys.ToList();
+
+        /// <summary>
+        /// ProjectModuleCategory.Information 模块特性列表
+        /// </summary>
+        public static IEnumerable<ProjectModuleAttribute> InfoModuleAttributes => SelectAttributeByCategory(ProjectModuleCategory.Information);
+
+        /// <summary>
+        /// ProjectModuleCategory.Resource 模块特性列表
+        /// </summary>
+        public static IEnumerable<ProjectModuleAttribute> ResourceModuleAttributes => SelectAttributeByCategory(ProjectModuleCategory.Resource);
+
+        /// <summary>
+        /// ProjectModuleCategory.Demand 模块特性列表
+        /// </summary>
+        public static IEnumerable<ProjectModuleAttribute> DemandModuleAttributes => SelectAttributeByCategory(ProjectModuleCategory.Demand);
+
+        /// <summary>
+        /// ProjectModuleCategory.Support 模块特性列表
+        /// </summary>
+        public static IEnumerable<ProjectModuleAttribute> SupportModuleAttributes => SelectAttributeByCategory(ProjectModuleCategory.Support);
+
+        // 构造函数，加载模块
+        static ProjectModuleManager() => ReloadModules();
 
         /// <summary>
         /// 根据配置文件，加载程序模块
@@ -68,6 +93,11 @@ namespace Demo.Manager
 
                 if (assembly != null)
                 {
+                    var type = assembly.ExportedTypes.First();
+                    var cc = type.GetCustomAttribute(typeof(ProjectModuleAttribute)) as ProjectModuleAttribute;
+
+
+
                     var attr = from t in assembly.ExportedTypes
                                where t.GetCustomAttribute<ProjectModuleAttribute>() != null
                                select t.GetCustomAttribute<ProjectModuleAttribute>();
@@ -117,6 +147,14 @@ namespace Demo.Manager
                     return GetModule(attr);
             }
             return null;
+        }
+
+        // 根据类型筛选模块特性
+        private static IEnumerable<ProjectModuleAttribute> SelectAttributeByCategory(ProjectModuleCategory category)
+        {
+            return from attr in ModuleAttributes
+                   where attr.Category == category
+                   select attr;
         }
     }
 

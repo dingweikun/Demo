@@ -232,20 +232,20 @@ namespace Demo.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accomplish.
+        ///   Looks up a localized string similar to Complete.
         /// </summary>
-        internal static string String_ModuleEditFinish {
+        internal static string String_ModuleEditComplete {
             get {
-                return ResourceManager.GetString("String_ModuleEditFinish", resourceCulture);
+                return ResourceManager.GetString("String_ModuleEditComplete", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Recover Saved Data.
+        ///   Looks up a localized string similar to Reload Saved Data.
         /// </summary>
-        internal static string String_ModuleEditRecover {
+        internal static string String_ModuleEditReload {
             get {
-                return ResourceManager.GetString("String_ModuleEditRecover", resourceCulture);
+                return ResourceManager.GetString("String_ModuleEditReload", resourceCulture);
             }
         }
         
@@ -372,6 +372,15 @@ namespace Demo.Language {
         internal static string String_Resources {
             get {
                 return ResourceManager.GetString("String_Resources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Project Modules.
+        /// </summary>
+        internal static string String_SelectProjectModule {
+            get {
+                return ResourceManager.GetString("String_SelectProjectModule", resourceCulture);
             }
         }
         

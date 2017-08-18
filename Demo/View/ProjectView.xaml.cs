@@ -1,20 +1,8 @@
 ﻿using Demo.Manager;
 using Demo.ViewModel;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Demo.View
 {
@@ -72,6 +60,8 @@ namespace Demo.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+            ProjectModuleManager.ReloadModules();
+
             if (DataContext is ProjectViewViewModel vm)
             {
                     vm.LoadAllProjectModules();
@@ -109,11 +99,15 @@ namespace Demo.View
 
                 MessageBox.Show(vm.ProjectModules.Count().ToString());
 
-
             }
 
-            this.RootTab.SelectedIndex = 0;
+            var vv = new View.ProjectModuleSelectWindow()
+            {
+                Owner = Helper.Helper.FindParentWindow(this)
+            };
+            
 
+            vv.ShowDialog();
 
 
 

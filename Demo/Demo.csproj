@@ -100,6 +100,7 @@
     <Compile Include="Converter\BoolReverseConverter.cs" />
     <Compile Include="Converter\AccentToBrushConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityHiddenConverter.cs" />
+    <Compile Include="Helper\Helper.cs" />
     <Compile Include="Language\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,10 +108,14 @@
     </Compile>
     <Compile Include="Manager\LanguageManager.cs" />
     <Compile Include="Manager\ProjectModuleManager.cs" />
-    <Compile Include="ViewModel\AppearenceView.ViewModel.cs" />
-    <Compile Include="ViewModel\MainWindow.ViewModel.cs" />
-    <Compile Include="ViewModel\ProjectView.ViewModel.cs" />
+    <Compile Include="ViewModel\ViewModel.AppearenceView.cs" />
+    <Compile Include="ViewModel\ViewModel.MainWindow.cs" />
+    <Compile Include="ViewModel\ViewModel.ProjectModuleSelectWindow.cs" />
+    <Compile Include="ViewModel\ViewModel.ProjectView.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ProjectModuleSelectWindow.xaml.cs">
+      <DependentUpon>ProjectModuleSelectWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
@@ -142,7 +147,7 @@
     <Compile Include="View\StartView.xaml.cs">
       <DependentUpon>StartView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\StartView.ViewModel.cs" />
+    <Compile Include="ViewModel\ViewModel.StartView.cs" />
     <Compile Include="View\WorkspaceView.xaml.cs">
       <DependentUpon>WorkspaceView.xaml</DependentUpon>
     </Compile>
@@ -169,6 +174,10 @@
     <Page Include="ResDict\StartView.ResDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProjectModuleSelectWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AboutWindow.xaml">
       <SubType>Designer</SubType>
