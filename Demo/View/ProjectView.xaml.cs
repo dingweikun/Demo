@@ -60,7 +60,7 @@ namespace Demo.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            ProjectModuleManager.ReloadModules();
+           // ProjectModuleManager.ReloadModules();
 
             if (DataContext is ProjectViewViewModel vm)
             {
@@ -105,7 +105,9 @@ namespace Demo.View
             {
                 Owner = Helper.Helper.FindParentWindow(this)
             };
-            
+
+            var mm = vv.DataContext as ProjectModuleSelectWindowViewModel;
+            mm.SelectedCategory = Module.ProjectModuleCategory.Demand;
 
             vv.ShowDialog();
 

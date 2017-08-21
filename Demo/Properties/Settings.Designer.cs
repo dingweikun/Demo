@@ -61,7 +61,8 @@ namespace Demo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ProjectModule.Demand.Power.dll;Demo.Module.PrimaryInfo.dll;Demo.Module.WindResour" +
+            "ce.dll;")]
         public string ProjectModulePath {
             get {
                 return ((string)(this["ProjectModulePath"]));
@@ -70,7 +71,7 @@ namespace Demo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ProjectModule.Demand.Power.dll")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Demo.Module.WindResource.dll;")]
         public string ProjectModuleAssembly {
             get {
                 return ((string)(this["ProjectModuleAssembly"]));

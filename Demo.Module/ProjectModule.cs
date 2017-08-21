@@ -6,19 +6,7 @@ namespace Demo.Module
 
     public abstract class ProjectModule : UserControl, IProjectModule
     {
-        /// <summary>
-        /// 工程模块分类
-        /// </summary>
-        //public enum ProjectModuleCategory
-        //{
-        //    Information,
-        //    Resource,
-        //    Demand,
-        //    Support
-        //}
-
         public abstract ProjectModuleCategory Category { get; }
-
 
         #region ModuleTitle
         /// <summary>
@@ -39,6 +27,7 @@ namespace Demo.Module
                 typeof(ProjectModule),
                 new FrameworkPropertyMetadata(string.Empty));
         #endregion
+
 
         #region IsInEdit
         /// <summary>
@@ -70,6 +59,28 @@ namespace Demo.Module
             }
         }
         #endregion
+        
+
+        #region IsUsed
+        /// <summary>
+        /// 表示模块是否被启用
+        /// </summary>
+        public bool IsUsed
+        {
+            get { return (bool)GetValue(IsUsedProperty); }
+            set { SetValue(IsUsedProperty, value); }
+        }
+        //
+        // Dependency property definition
+        //
+        public static readonly DependencyProperty IsUsedProperty =
+            DependencyProperty.Register(
+                nameof(IsUsed),
+                typeof(bool),
+                typeof(ProjectModule),
+                new FrameworkPropertyMetadata(false));
+        #endregion
+
 
         /// <summary>
         /// 

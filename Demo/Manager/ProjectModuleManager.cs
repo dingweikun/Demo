@@ -36,6 +36,7 @@ namespace Demo.Manager
             }
         }
 
+        /*
         /// <summary>
         /// 已加载模块的特性列表, 特性（ProjectModuleAttribute）可用来通过 GetModule 方法获取模块实例
         /// </summary>
@@ -60,6 +61,8 @@ namespace Demo.Manager
         /// ProjectModuleCategory.Support 模块特性列表
         /// </summary>
         public static IEnumerable<ProjectModuleAttribute> SupportModuleAttributes => SelectAttributeByCategory(ProjectModuleCategory.Support);
+        //*/
+
 
         // 构造函数，加载模块
         static ProjectModuleManager() => ReloadModules();
@@ -93,11 +96,6 @@ namespace Demo.Manager
 
                 if (assembly != null)
                 {
-                    var type = assembly.ExportedTypes.First();
-                    var cc = type.GetCustomAttribute(typeof(ProjectModuleAttribute)) as ProjectModuleAttribute;
-
-
-
                     var attr = from t in assembly.ExportedTypes
                                where t.GetCustomAttribute<ProjectModuleAttribute>() != null
                                select t.GetCustomAttribute<ProjectModuleAttribute>();
@@ -149,12 +147,34 @@ namespace Demo.Manager
             return null;
         }
 
-        // 根据类型筛选模块特性
+        /*/ 根据类型筛选模块特性
         private static IEnumerable<ProjectModuleAttribute> SelectAttributeByCategory(ProjectModuleCategory category)
         {
             return from attr in ModuleAttributes
                    where attr.Category == category
                    select attr;
+        }
+        //*/
+
+
+        /// <summary>
+        /// 根据类型筛选模块
+        /// </summary>
+        public static IEnumerable<ProjectModule> SelectModule(IEnumerable<ProjectModule> source, ProjectModuleCategory category)
+        {
+            return from mode in source
+                   where mode.Category == category
+                   select mode;
+        }
+
+        /// <summary>
+        /// 根据类型和使用状态筛选模块
+        /// </summary>
+        public static IEnumerable<ProjectModule> SelectModule(IEnumerable<ProjectModule> source, ProjectModuleCategory category, bool isUsed = true)
+        {
+            return from mode in source
+                   where mode.Category == category && mode.IsUsed == isUsed
+                   select mode;
         }
     }
 

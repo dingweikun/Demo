@@ -97,6 +97,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\ModuleCategoryToIntConverter.cs" />
     <Compile Include="Converter\BoolReverseConverter.cs" />
     <Compile Include="Converter\AccentToBrushConverter.cs" />
     <Compile Include="Converter\BoolToVisibilityHiddenConverter.cs" />

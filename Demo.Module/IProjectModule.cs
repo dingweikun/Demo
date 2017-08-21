@@ -11,5 +11,6 @@ namespace Demo.Module
         string ModuleTitle { get; }
 
         bool IsInEdit { get; }
+        bool IsUsed { get; }
     }
 }
